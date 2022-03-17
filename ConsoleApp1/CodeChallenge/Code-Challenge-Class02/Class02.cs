@@ -41,6 +41,7 @@ namespace ConsoleApp1
 
 
 
+
             int mid = findMiddleOfArray(arr);
 
             //// fill the data from the first array and the number that e want to add in the middle into second array.
