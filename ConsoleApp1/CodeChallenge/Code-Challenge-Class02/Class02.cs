@@ -9,12 +9,12 @@ namespace ConsoleApp1
     class Class02
     {
 
-
+        
         ///// find middle of array function
         public static int findMiddleOfArray(int[] arr)
         {
             int mid = 0;
-
+            
 
             //// find the middle of the the given array.
             // we can use   Math.Round for this step.

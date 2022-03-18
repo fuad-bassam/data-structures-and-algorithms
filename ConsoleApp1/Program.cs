@@ -30,21 +30,21 @@ namespace ConsoleApp1
 
 
             ///////array-reverse challenge           
-            int[] arrReverse = { 5, 6, 7 };
-            Class1.showArray(Class1.reverseArray(arrReverse));
-
+            String[] arrReverse = { "5", "6", "7" };
+            //  Class1.showArray(Class1.reverseArray(arrReverse));
+            Class1.ShowArray(Class1.ReversArray(arrReverse));
 
             //////////////
 
 
-            /////////////// array-insert-shift challenge
+            ///////////// array-insert-shift challenge
             int[] arrInsertShift = { 1, 2, 3, 4 };
 
             Console.WriteLine("the array after that we want to change it");
             arrayIntElementToConsole(arrInsertShift);
-        
+
             int numInMiddel = 0;
-            
+
             do
             {
 
@@ -52,7 +52,7 @@ namespace ConsoleApp1
 
             } while (!int.TryParse(Console.ReadLine(), out numInMiddel));
 
-           
+
             int[] arrInsertShift02 = Class02.insertShiftArray(arrInsertShift, numInMiddel);
             Console.WriteLine("the array after add number in the middle");
             arrayIntElementToConsole(arrInsertShift02);
