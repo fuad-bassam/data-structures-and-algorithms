@@ -13,7 +13,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{06A9EDE1-E11E-418C-93C0-DECBCE194C16}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\Desktop\array-insert-shift-IMAGE.PNG = ..\..\..\Desktop\array-insert-shift-IMAGE.PNG
-		image\wb1.PNG = image\wb1.PNG
+		..\..\..\Desktop\reverseArray.PNG = ..\..\..\Desktop\reverseArray.PNG
 	EndProjectSection
 EndProject
 Global
