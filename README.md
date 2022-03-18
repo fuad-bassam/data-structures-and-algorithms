@@ -3,7 +3,7 @@
 **this program work by Reverse the element in the order.**
 
 ## Whiteboard Process
-![img](./image/wb1.PNG)
+![img](./image/reverseArray.PNG)
 
 ## Approach & Efficiency
 
