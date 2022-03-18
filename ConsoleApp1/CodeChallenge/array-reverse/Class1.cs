@@ -11,33 +11,62 @@ namespace ConsoleApp1.codeCha
 
 
 
-        ///////array-reverse challenge
-        public static int[] reverseArray(int[] arr)
+        /////////array-reverse challenge
+        //public static int[] reverseArray(int[] arr)
+        //{
+        //    int[] arr2 = new int[arr.Length];
+
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        arr2[i] = arr[arr.Length - i - 1];
+        //        Console.WriteLine(arr2[i]);
+        //    }
+
+        //    return arr2;
+
+        //}
+
+        //public static void showArray(int[] arr)
+        //{
+
+        //    Console.WriteLine("the result is :-");
+
+        //    foreach (int item in arr)
+        //    {
+
+        //        Console.Write(item + " , ");
+        //    }
+
+        //}
+
+
+        ////ReversArray
+        public static String[] ReversArray(string[] arr)
         {
-            int[] arr2 = new int[arr.Length];
+            string[] arr2 = new String [arr.Length];
 
             for (int i = 0; i < arr.Length; i++)
             {
-                arr2[i] = arr[arr.Length - i - 1];
-                Console.WriteLine(arr2[i]);
+                arr2[i] = arr[arr.Length - i -1];
             }
 
             return arr2;
 
         }
 
-        public static void showArray(int[] arr)
+        ////output array element to console
+        public static void ShowArray(String[] arr)
         {
+            Console.Write(" Result array =  { ");
 
-            Console.WriteLine("the result is :-");
-
-            foreach (int item in arr)
+            for (int i = 0; i < arr.Length; i++)
             {
-
-                Console.Write(item + " , ");
+                Console.Write(arr[i]+" ");
             }
 
+            Console.Write(" } ");
         }
+
 
     }
 }

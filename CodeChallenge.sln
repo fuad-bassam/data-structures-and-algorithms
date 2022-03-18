@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{6DB14171-FAF0-4E47-962C-1D378337EB11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeChallenge", "ConsoleApp1\CodeChallenge.csproj", "{6DB14171-FAF0-4E47-962C-1D378337EB11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{67A50197-05C5-4CE1-B995-AC7C5A9390F5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{06A9EDE1-E11E-418C-93C0-DECBCE194C16}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\array-insert-shift-IMAGE.PNG = ..\..\..\Desktop\array-insert-shift-IMAGE.PNG
+		image\wb1.PNG = image\wb1.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +29,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06A9EDE1-E11E-418C-93C0-DECBCE194C16} = {67A50197-05C5-4CE1-B995-AC7C5A9390F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC7249AF-6D54-4A0B-BE9B-99A27B493FB2}
