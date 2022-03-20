@@ -1,3 +1,13 @@
+# List Topics
+
+ #|Class|Topic
+---|-----|----
+1  |Class1|[Reverse an Array](#Reverse-an-Array)
+2  |Class2|[Insert to Middle of an Array](#Insert-to-Middle-of-an-Array)
+3  |Class3|[Array Binary Search](#Array-Binary-Search)
+
+![img](./image/challenge-Logo2.jpg)
+
 # Reverse an Array
 
 **this program work by Reverse the element in the order.**
@@ -27,3 +37,22 @@ this challenge take an array and edit it from the middle with the number that gi
 
 ## Approach & Efficiency
  Separate code to classes and each class so it can reuse it and add more features, and in code i try to find the middle and copy all the content into anther array so i will not have any problem with shifting items
+
+
+
+
+
+# Array Binary Search
+
+
+use binary search way to sort integer array .
+
+
+## Whiteboard Process
+![img](./image/array-binary-search.png)
+
+
+## Approach & Efficiency
+ Separate code to methods and for main function (BinarySearch) I try to use binary search tree concepts and divide array to half and find the element that user want
+
+
