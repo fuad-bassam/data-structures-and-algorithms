@@ -25,9 +25,37 @@ namespace ConsoleApp1
 
 
 
+        ////////// call-Challenge5-linked-list
+        public static void Call_LinkedList() {
+            try
+            {
+                LinkedList linkl = new LinkedList(5);
+                linkl.Insert(8);
+                linkl.Insert(6);
+                linkl.Insert(4);
+                linkl.Tostring();
+                Console.WriteLine($"is there {4} " + linkl.Indicates(4));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+          
+        }
+
+
         static void Main(string[] args)
         {
 
+
+
+
+            /////////linked-list Challenge
+
+            Call_LinkedList();
+
+            //////////////
 
             /////////array-reverse challenge           
             //String[] arrReverse = { "5", "6", "7" };
@@ -66,10 +94,10 @@ namespace ConsoleApp1
 
             ////////array-binary-search challenge
 
-            int[] binarySearch_arr = { 2, 3, 2, 7, 4, 6, 5 };
+            //int[] binarySearch_arr = { 2, 3, 2, 7, 4, 6, 5 };
 
 
-            Console.WriteLine(Class3.BinarySearch(Class3.SortArray(binarySearch_arr), 9));
+            //Console.WriteLine(Class3.BinarySearch(Class3.SortArray(binarySearch_arr), 9));
             //////////////////////////
 
 
