@@ -5,6 +5,9 @@
 1  |Class1|[Reverse an Array](#Reverse-an-Array)
 2  |Class2|[Insert to Middle of an Array](#Insert-to-Middle-of-an-Array)
 3  |Class3|[Array Binary Search](#Array-Binary-Search)
+4  |CLass4|null
+5  |Class5|[Singly Linked List](#Singly-Linked-List)
+
 
 ![img](./image/challenge-Logo2.jpg)
 
@@ -55,4 +58,35 @@ use binary search way to sort integer array .
 ## Approach & Efficiency
  Separate code to methods and for main function (BinarySearch) I try to use binary search tree concepts and divide array to half and find the element that user want
 
+
+# Singly Linked List
+
+## Challenge
+
+this code do some of single linked list prensapels (add to first ,print the list in console and find if elenemt is exist)
+
+
+## Approach & Efficiency
+
+linked list alogrithem and the big(O) 
+- for add is O(1)
+- for print O(n)
+- for Indicates O(n)
+
+
+## API 
+- Insert
+ in this method we will add elemint at the head of lest and make the previos head the second elemint in list
+
+
+-  Tostring 
+
+in this method print the list element in console .
+
+
+- Indicates
+ find if elenemt is exist 
+
+
+![img](./image/Class5.PNG)
 
