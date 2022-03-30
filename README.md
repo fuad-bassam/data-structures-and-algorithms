@@ -7,6 +7,7 @@
 3  |Class3|[Array Binary Search](#Array-Binary-Search)
 4  |CLass4|null
 5  |Class5|[Singly Linked List](#Singly-Linked-List)
+6  |Class6|[update class5](#Singly-Linked-List)
 
 
 ![img](./image/challenge-Logo2.jpg)
@@ -72,6 +73,9 @@ linked list alogrithem and the big(O)
 - for add is O(1)
 - for print O(n)
 - for Indicates O(n)
+- for InsertAfter O(n)
+- for InsertBefore O(n)
+- for AppendElement O(n)
 
 
 ## API 
@@ -87,6 +91,24 @@ in this method print the list element in console .
 - Indicates
  find if elenemt is exist 
 
+- InsertAfter
+add node to the list `after` the palace that user want.
 
-![img](./image/Class5.PNG)
+- InsertBefore
+add node to the list `before` the palace that user want.
+
+- AppendElement
+in this method we will add elemint at the `end` of lest 
+
+
+
+**Class5**  
+![img](./image/Class5.PNG)  
+**Class5 test**  
+![img](./image/Class5_test.PNG)  
+
+**Class6**  
+![img](./image/Class6.PNG)  
+**Class6 test**  
+![img](./image/Class6_5_test.PNG) 
 

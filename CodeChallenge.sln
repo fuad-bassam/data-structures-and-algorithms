@@ -17,6 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{06A9EDE1
 		image\challenge-Logo.jpg = image\challenge-Logo.jpg
 		image\challenge-Logo2.jpg = image\challenge-Logo2.jpg
 		..\..\..\Desktop\class5.PNG = ..\..\..\Desktop\class5.PNG
+		..\..\..\Desktop\Class5_test.PNG = ..\..\..\Desktop\Class5_test.PNG
+		..\..\..\Desktop\class6.PNG = ..\..\..\Desktop\class6.PNG
+		..\..\..\Desktop\Class6_5_test.PNG = ..\..\..\Desktop\Class6_5_test.PNG
 		..\..\..\Desktop\reverseArray.PNG = ..\..\..\Desktop\reverseArray.PNG
 	EndProjectSection
 EndProject

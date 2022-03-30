@@ -33,7 +33,10 @@ namespace ConsoleApp1
                 linkl.Insert(8);
                 linkl.Insert(6);
                 linkl.Insert(4);
-                linkl.Tostring();
+                linkl.AppendElement(12);
+                linkl.InsertAfter(13,6);
+                linkl.InsertBefore(15,4);
+                Console.Write(linkl.Tostring());
                 Console.WriteLine($"is there {4} " + linkl.Indicates(4));
             }
             catch (Exception e)
@@ -44,6 +47,31 @@ namespace ConsoleApp1
           
         }
 
+        ////////// call-Challenge6-linked-list
+        public static void Call_LinkedList2()
+        {
+            try
+            {
+                LinkedList linkl = new LinkedList(5);
+                
+                linkl.AppendElement(12);
+                linkl.AppendElement(11);
+                linkl.AppendElement(10);
+                linkl.AppendElement(9);
+                linkl.AppendElement(8);
+                linkl.InsertAfter(13, 8);
+              //  linkl.InsertBefore(15, 12);
+                Console.Write(linkl.Tostring());
+        
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -51,9 +79,29 @@ namespace ConsoleApp1
 
 
 
+
+            ////////// linked-list-insertions
+
+
+
+            Call_LinkedList2();
+
+
+
+            //////////////////////////
+
+
+
+
+
+
+
+
+
+
             /////////linked-list Challenge
 
-            Call_LinkedList();
+           // Call_LinkedList();
 
             //////////////
 
