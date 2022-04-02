@@ -11,85 +11,61 @@ namespace ConsoleApp1
         //int value;
        public Node next;
 
-        public int Value { get; set; }
+        public String Value { get; set; }
 
        // public Node Next { get; set; }
 
-        public Node(int val) {
+        public Node(String val) {
            this.Value = val;
 
             this.next = null; 
         }
      public  Node() {
 
-            this.Value = 0;
+            this.Value = null;
+         
             this.next = null;
         }
     }
 
 
-   public class LinkedList{
+    public class LinkedList
+    {
 
 
-      public Node head;
+        Node head;
 
+        //Class5 methods
 
-        //Node node = new Node();
-       public LinkedList(int val) {
-
-            head = new Node(val);
-            
-
-        }
-        public LinkedList()
+        /// <summary>
+        /// add element in the first of linked list
+        /// </summary>
+        /// <param name="val"></param>
+        public void insert(String val)
         {
 
-            head = new Node();
-
+            Node addVal = new Node(val);
+            addVal.next = head;
+            head = addVal;
+            Console.WriteLine("add " + head.Value);
 
         }
 
 
-
         /// <summary>
-        //// Print linked-list
-        /// </summary>
-        public String Tostring() {
-
-           // Console.Write("[" + head.Value + "] ->");
-            //if (head.next != null)
-            //{
-            //    Tostring(head.next);
-            //}
-            Node Count = head;
-            string word ="";
-            while (Count != null )
-            { word += "[" + Count.Value + "] ->";
-                Count = Count.next;
-                if (Count == null)
-                {
-                    word += "NULL";
-                }
-
-            }
-
-            return word;
-        }
-
-
-        /// <summary>
-        /// /serch for element in linked list
+        /// /search for element in linked list
         /// </summary>
         /// <param name="val"> thee value for search element </param>
         /// <returns></returns>
-        public bool Indicates(int val) {
+        public bool indicates(String val)
+        {
 
-           
+
             Node node = head;
             while (node != null)
             {
 
-                if (node.Value==val)
+                if (node.Value == val)
                 {
                     return true;
                 }
@@ -102,27 +78,47 @@ namespace ConsoleApp1
         }
 
         /// <summary>
-        /// add element in the first of linked list
+        //// Print linked-list
         /// </summary>
-        /// <param name="val"></param>
-        public void Insert(int val) {
-          
-            Node addVal = new Node(val);
-                addVal.next = head;
-                head = addVal;
-           Console.WriteLine("add " + head.Value);
-        
-           }
+        public String toString()
+        {
 
+            Node Count = head;
+            string word = null;
+            while (Count != null)
+            {
+                word += "[" + Count.Value + "] ->";
+                Count = Count.next;
+                if (Count == null)
+                {
+                    word += "NULL";
+                }
 
-      
+            }
 
+            return word;
+        }
 
         /// <summary>
-        /// add elemnt in the last of linked list
+        /// Check and get the place of head
+        /// </summary>
+        /// <returns></returns>
+        public String getHead()
+        {
+            return head.Value;
+        }
+
+
+
+
+
+        //Class6 methods
+
+        /// <summary>
+        /// add element in the last of linked list
         /// </summary>
         /// <param name="val">the value of the new element</param>
-        public void AppendElement(int val)
+        public void appendElement(String val)
         {
             Node addVal = new Node(val);
 
@@ -130,10 +126,12 @@ namespace ConsoleApp1
 
 
             //if the list is empty
-            if (node == null) {
+            if (node == null)
+            {
 
-                node = addVal;
-
+                head = addVal;
+                Console.WriteLine("Add " + addVal.Value + " To The HEAD");
+                return;
             }
 
             while (node.next != null)
@@ -141,9 +139,11 @@ namespace ConsoleApp1
                 node = node.next;
 
             }
+
+
             node.next = addVal;
 
-            Console.WriteLine("add " + addVal.Value+" in the end of list");
+            Console.WriteLine("add " + addVal.Value + " in the end of list");
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace ConsoleApp1
         /// </summary>
         /// <param name="val">the value of the new element</param>
         /// <param name="place">where the place we want to insert before</param>
-        public void InsertBefore(int val ,int place)
+        public void insertBefore(String val, String place)
         {
 
 
@@ -167,11 +167,18 @@ namespace ConsoleApp1
                 node = addVal;
 
             }
-          
 
+            // if add to first
+            if (node.Value == place)
+            {
 
+                addVal.next = head;
+                head = addVal;
+                return;
+            }
+            
 
-                while (node.next.Value != place)
+            while (node.next.Value != place)
                 {
 
                     if (node == null)
@@ -182,25 +189,26 @@ namespace ConsoleApp1
                     node = node.next;
 
                 }
-
-
-                if (node.next == null)
-                {
-
-                    Console.WriteLine("element is not you want to add before " + place);
-                }
-                else
-                {
-
-                    addVal.next = node.next;
-                    node.next = addVal;
-
-
-                    Console.WriteLine("add " + node.next.Value + " before " + place);
-                }
-
-
             
+
+
+            if (node.next == null)
+            {
+
+                Console.WriteLine("element is not you want to add before " + place);
+            }
+            else
+            {
+
+                addVal.next = node.next;
+                node.next = addVal;
+
+
+                Console.WriteLine("add " + node.next.Value + " before " + place);
+            }
+
+
+
 
         }
         /// <summary>
@@ -208,7 +216,7 @@ namespace ConsoleApp1
         /// </summary>
         /// <param name="val">the value of the new element</param>
         /// <param name="place">where the place we want to insert after/param>
-        public void InsertAfter(int val, int place)
+        public void insertAfter(String val, String place)
         {
 
 
@@ -228,7 +236,7 @@ namespace ConsoleApp1
             while (node.Value != place)
             {
 
-              
+
 
                 node = node.next;
                 if (node == null)
@@ -240,7 +248,7 @@ namespace ConsoleApp1
             if (node == null)
             {
 
-                Console.WriteLine("element is not you want to add after "+place);
+                Console.WriteLine("element is not you want to add after " + place);
             }
             else
             {
@@ -248,9 +256,9 @@ namespace ConsoleApp1
 
                 addVal.next = node.next;
                 node.next = addVal;
-                
 
-                Console.WriteLine("add " + node.next.Value + " afrer "+place);
+
+                Console.WriteLine("add " + node.next.Value + " afrer " + place);
             }
 
 
@@ -260,13 +268,7 @@ namespace ConsoleApp1
 
 
 
-
-
     }
-
-
-
-   
 
 
 }

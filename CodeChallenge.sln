@@ -20,10 +20,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "image", "image", "{06A9EDE1
 		..\..\..\Desktop\Class5_test.PNG = ..\..\..\Desktop\Class5_test.PNG
 		..\..\..\Desktop\class6.PNG = ..\..\..\Desktop\class6.PNG
 		..\..\..\Desktop\Class6_5_test.PNG = ..\..\..\Desktop\Class6_5_test.PNG
+		image\linked-list.PNG = image\linked-list.PNG
 		..\..\..\Desktop\reverseArray.PNG = ..\..\..\Desktop\reverseArray.PNG
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject1", "TestProject1\TestProject1.csproj", "{2074C66C-2690-4015-A862-1377152BE383}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "read", "read", "{E3B87B15-A142-443D-B7E7-2F11B27C74BA}"
+	ProjectSection(SolutionItems) = preProject
+		read\ArrayBinarySearch.md = read\ArrayBinarySearch.md
+		read\InsertToMiddleOfAnArray.md = read\InsertToMiddleOfAnArray.md
+		read\LinkedListInsertions.md = read\LinkedListInsertions.md
+		read\ReverseAnArray.md = read\ReverseAnArray.md
+		read\SinglyLinkedList.md = read\SinglyLinkedList.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +55,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{06A9EDE1-E11E-418C-93C0-DECBCE194C16} = {67A50197-05C5-4CE1-B995-AC7C5A9390F5}
+		{E3B87B15-A142-443D-B7E7-2F11B27C74BA} = {67A50197-05C5-4CE1-B995-AC7C5A9390F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC7249AF-6D54-4A0B-BE9B-99A27B493FB2}

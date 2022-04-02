@@ -29,15 +29,15 @@ namespace ConsoleApp1
         public static void Call_LinkedList() {
             try
             {
-                LinkedList linkl = new LinkedList(5);
-                linkl.Insert(8);
-                linkl.Insert(6);
-                linkl.Insert(4);
-                linkl.AppendElement(12);
-                linkl.InsertAfter(13,6);
-                linkl.InsertBefore(15,4);
-                Console.Write(linkl.Tostring());
-                Console.WriteLine($"is there {4} " + linkl.Indicates(4));
+                LinkedList linkl = new LinkedList();
+                linkl.insert("8");
+                linkl.insert("6");
+                linkl.insert("4");
+                linkl.appendElement("12");
+                linkl.insertAfter("13","6");
+                linkl.insertBefore("15","4");
+                Console.Write(linkl.toString());
+                Console.WriteLine($"is there {4} " + linkl.indicates("4"));
             }
             catch (Exception e)
             {
@@ -52,16 +52,16 @@ namespace ConsoleApp1
         {
             try
             {
-                LinkedList linkl = new LinkedList(5);
+                LinkedList linkl = new LinkedList();
                 
-                linkl.AppendElement(12);
-                linkl.AppendElement(11);
-                linkl.AppendElement(10);
-                linkl.AppendElement(9);
-                linkl.AppendElement(8);
-                linkl.InsertAfter(13, 8);
-              //  linkl.InsertBefore(15, 12);
-                Console.Write(linkl.Tostring());
+                linkl.appendElement("12");
+                linkl.appendElement("11");
+                linkl.appendElement("10");
+                linkl.appendElement("9");
+                linkl.appendElement("8");
+                linkl.insertAfter("13", "8");
+              //  linkl.insertBefore(15, 12);
+                Console.Write(linkl.toString());
         
             }
             catch (Exception e)
@@ -114,10 +114,10 @@ namespace ConsoleApp1
 
 
             /////////////// array-insert-shift challenge
-            //int[] arrInsertShift = { 1, 2, 3, 4 };
+            //int[] arrinsertShift = { 1, 2, 3, 4 };
 
             //Console.WriteLine("the array after that we want to change it");
-            //arrayIntElementToConsole(arrInsertShift);
+            //arrayIntElementToConsole(arrinsertShift);
 
             //int numInMiddel = 0;
 
@@ -129,13 +129,13 @@ namespace ConsoleApp1
             //} while (!int.TryParse(Console.ReadLine(), out numInMiddel));
 
 
-            //int[] arrInsertShift02 = Class02.insertShiftArray(arrInsertShift, numInMiddel);
+            //int[] arrinsertShift02 = Class02.insertShiftArray(arrinsertShift, numInMiddel);
             //Console.WriteLine("the array after add number in the middle");
-            //arrayIntElementToConsole(arrInsertShift02);
+            //arrayIntElementToConsole(arrinsertShift02);
 
-            //arrInsertShift02 = Class02.deleteShiftArray(arrInsertShift02);
+            //arrinsertShift02 = Class02.deleteShiftArray(arrinsertShift02);
             //Console.WriteLine("the array after delete number in the middle");
-            //arrayIntElementToConsole(arrInsertShift02);
+            //arrayIntElementToConsole(arrinsertShift02);
 
             /////////////////////////////////////////
 
