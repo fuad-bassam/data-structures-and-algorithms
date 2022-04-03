@@ -12,7 +12,7 @@ in this project you will find some algorithims and codes for many Topics i hope 
 4  |CLass4|**In separate project**
 5  |Class5|[Singly Linked List](./read/SinglyLinkedList.md)
 6  |Class6|[Linked List insertions (Update Class5)](./read/LinkedListinsertions.md)
-
+7  |Class7|[Linked List insertions (Update Class5)](./read/linked-list-kth.md)
 
 ![img](./image/challenge-Logo2.jpg)
 
