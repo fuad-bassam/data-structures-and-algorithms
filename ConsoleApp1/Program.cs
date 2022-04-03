@@ -7,6 +7,7 @@ namespace ConsoleApp1
 
     class Program
     {
+        
 
         public static void arrayIntElementToConsole(int[] arr)
         {
@@ -59,7 +60,7 @@ namespace ConsoleApp1
                 linkl.appendElement("10");
                 linkl.appendElement("9");
                 linkl.appendElement("8");
-                linkl.insertAfter("13", "8");
+                linkl.insertAfter("13", "16");
               //  linkl.insertBefore(15, 12);
                 Console.Write(linkl.toString());
         
@@ -72,23 +73,53 @@ namespace ConsoleApp1
 
         }
 
+        //call-Challenge7-linked-list-kth
+
+        public static void Call_LinkedList3()
+        {
+            try
+            {
+                LinkedList linkl = new LinkedList();
+
+                linkl.appendElement("12");
+                linkl.appendElement("11");
+                linkl.appendElement("10");
+                linkl.appendElement("9");
+                linkl.appendElement("8");
+
+
+                //  Console.Write(linkl.toString());
+                Console.WriteLine("the value is "+ linkl.kthFromEnd(3));
+                Console.WriteLine("the value is "+linkl.kthFromEnd(0));
+
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+
+        }
 
         static void Main(string[] args)
         {
 
 
+            //Class7 methods kthFromEndList
 
+          //  Call_LinkedList3();
+
+            //////////////////////////
 
 
             ////////// linked-list-insertions
 
 
 
-            Call_LinkedList2();
+             Call_LinkedList2();
 
+            ////////////////////
 
-
-            //////////////////////////
 
 
 
@@ -101,7 +132,7 @@ namespace ConsoleApp1
 
             /////////linked-list Challenge
 
-           // Call_LinkedList();
+            // Call_LinkedList();
 
             //////////////
 

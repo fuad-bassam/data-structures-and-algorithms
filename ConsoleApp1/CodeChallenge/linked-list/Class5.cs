@@ -17,7 +17,7 @@ namespace ConsoleApp1
 
         public Node(String val) {
            this.Value = val;
-
+            
             this.next = null; 
         }
      public  Node() {
@@ -27,13 +27,77 @@ namespace ConsoleApp1
             this.next = null;
         }
     }
-
+    
 
     public class LinkedList
     {
 
 
         Node head;
+
+
+        //Class7 methods kthFromEndList
+
+        /// <summary>
+        /// get the length for the list
+        /// </summary>
+        /// <returns></returns>
+        public int listLength()
+        {
+
+            Node node1 = head;
+            int count = 1;
+
+            if (node1 ==null)
+            {
+                return 0;
+            }
+           
+          while (node1.next != null)
+           {
+                count++;
+                node1 = node1.next;
+           }
+            return count;
+
+
+
+        }
+
+
+        /// <summary>
+        /// get the value for the element that user select the node number from the last
+        /// </summary>
+        /// <param name="kth">the node number</param>
+        /// <returns></returns>
+        public String kthFromEnd(int kth)
+        {
+
+            Node node1 = head;
+            int num;
+           
+            
+          
+                num = listLength() - kth;
+           
+
+
+
+            if (num <= 0 || kth<0)
+            {
+                return "ERROR, the selected number is NOT ok";
+            }
+            for (int i =1; i < num; i++)
+            {
+                node1 = node1.next;
+
+
+            }
+            return node1.Value;
+
+
+}
+
 
         //Class5 methods
 
@@ -195,7 +259,7 @@ namespace ConsoleApp1
             if (node.next == null)
             {
 
-                Console.WriteLine("element is not you want to add before " + place);
+                Console.WriteLine("element " + place+" it NOT exist cant add before");
             }
             else
             {
@@ -248,7 +312,7 @@ namespace ConsoleApp1
             if (node == null)
             {
 
-                Console.WriteLine("element is not you want to add after " + place);
+                Console.WriteLine("element " + place + " it NOT exist cant add after");
             }
             else
             {
