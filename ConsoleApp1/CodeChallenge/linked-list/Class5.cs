@@ -17,7 +17,7 @@ namespace ConsoleApp1
 
         public Node(String val) {
            this.Value = val;
-
+            
             this.next = null; 
         }
      public  Node() {
@@ -27,7 +27,7 @@ namespace ConsoleApp1
             this.next = null;
         }
     }
-
+    
 
     public class LinkedList
     {
