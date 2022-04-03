@@ -60,7 +60,7 @@ namespace ConsoleApp1
                 linkl.appendElement("10");
                 linkl.appendElement("9");
                 linkl.appendElement("8");
-                linkl.insertAfter("13", "8");
+                linkl.insertAfter("13", "16");
               //  linkl.insertBefore(15, 12);
                 Console.Write(linkl.toString());
         
@@ -107,7 +107,7 @@ namespace ConsoleApp1
 
             //Class7 methods kthFromEndList
 
-            Call_LinkedList3();
+          //  Call_LinkedList3();
 
             //////////////////////////
 
@@ -116,7 +116,7 @@ namespace ConsoleApp1
 
 
 
-            // Call_LinkedList2();
+             Call_LinkedList2();
 
             ////////////////////
 

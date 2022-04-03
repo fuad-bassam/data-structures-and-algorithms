@@ -259,7 +259,7 @@ namespace ConsoleApp1
             if (node.next == null)
             {
 
-                Console.WriteLine("element is not you want to add before " + place);
+                Console.WriteLine("element " + place+" it NOT exist cant add before");
             }
             else
             {
@@ -312,7 +312,7 @@ namespace ConsoleApp1
             if (node == null)
             {
 
-                Console.WriteLine("element is not you want to add after " + place);
+                Console.WriteLine("element " + place + " it NOT exist cant add after");
             }
             else
             {
