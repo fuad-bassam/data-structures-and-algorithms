@@ -35,6 +35,70 @@ namespace ConsoleApp1
 
         Node head;
 
+
+        //Class7 methods kthFromEndList
+
+        /// <summary>
+        /// get the length for the list
+        /// </summary>
+        /// <returns></returns>
+        public int listLength()
+        {
+
+            Node node1 = head;
+            int count = 1;
+
+            if (node1 ==null)
+            {
+                return 0;
+            }
+           
+          while (node1.next != null)
+           {
+                count++;
+                node1 = node1.next;
+           }
+            return count;
+
+
+
+        }
+
+
+        /// <summary>
+        /// get the value for the element that user select the node number from the last
+        /// </summary>
+        /// <param name="kth">the node number</param>
+        /// <returns></returns>
+        public String kthFromEnd(int kth)
+        {
+
+            Node node1 = head;
+            int num;
+           
+            
+          
+                num = listLength() - kth;
+           
+
+
+
+            if (num <= 0 || kth<0)
+            {
+                return "ERROR, the selected number is NOT ok";
+            }
+            for (int i =1; i < num; i++)
+            {
+                node1 = node1.next;
+
+
+            }
+            return node1.Value;
+
+
+}
+
+
         //Class5 methods
 
         /// <summary>
