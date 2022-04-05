@@ -36,6 +36,22 @@ namespace ConsoleApp1
         Node head;
 
 
+        /// <summary>
+        /// getter and aetter for the first node in list (the head)
+        /// </summary>
+        /// <returns></returns>
+        ///////////Class8 methods  linked-list-zip
+        ///
+        public Node FirstNode
+        {
+            get { return head; }
+
+
+            set{ head = value; }
+        }
+       
+
+
 
         //Class7 methods kthFromEndList
 

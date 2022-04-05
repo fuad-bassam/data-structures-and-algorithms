@@ -252,6 +252,229 @@ namespace TestProject1
 
         }
 
+        
+        [Fact]
+        // test Where k is greater than the length of the linked list
+        public void Class07_Test_KIsGreater()
+        {
+            LinkedList test3 = new LinkedList();
+            test3.insert("2");
+            test3.insert("3");
+            test3.insert("4");
+            test3.insert("5");
+            test3.insert("6");
+            test3.insert("7");
+
+             Assert.Equal("ERROR, the selected number is NOT ok", test3.kthFromEnd(12));
+
+          
+        }
+
+
+        [Fact]
+        // test Where k and the length of the list are the same
+        public void Class07_Test_KEeualListLength()
+        {
+            LinkedList test3 = new LinkedList();
+            test3.insert("2");
+            test3.insert("3");
+            test3.insert("4");
+            test3.insert("5");
+            test3.insert("6");
+            test3.insert("7");
+
+            Assert.Equal("7", test3.kthFromEnd(5));
+
+
+        }
+
+
+        [Fact]
+        // test Where k is not a positive integer
+        public void Class07_Test_KNotpos()
+        {
+            LinkedList test3 = new LinkedList();
+            test3.insert("2");
+            test3.insert("3");
+            test3.insert("4");
+            test3.insert("5");
+            test3.insert("6");
+            test3.insert("7");
+
+
+            Assert.Equal("ERROR, the selected number is NOT ok", test3.kthFromEnd(-1));
+
+
+
+        }
+
+        [Fact]
+        // test Where the linked list is of a size 1
+        public void Class07_Test_listOf1node()
+        {
+            LinkedList test3 = new LinkedList();
+            test3.insert("a");
+           
+
+
+            Assert.Equal("a", test3.kthFromEnd(0));
+
+
+
+        }
+
+
+        [Fact]
+        // test Happy Path where k is not at the end, but somewhere in the middle of the linked list
+        public void Class07_Test_HappyPath()
+        {
+            LinkedList test3 = new LinkedList();
+            test3.insert("a");
+            test3.insert("b");
+            test3.insert("c");
+            test3.insert("d");
+            test3.insert("e");
+            test3.insert("f");
+
+
+            Assert.Equal("d", test3.kthFromEnd(3));
+
+
+
+        }
+
+
+
+
+        [Fact]
+        // test  if Can successfully combine two list with the same length
+        public void Class08_Test1_ZipList()
+        {
+            LinkedList list1 = new LinkedList();
+            list1.appendElement("a");
+            list1.appendElement("b");
+            list1.appendElement("c");
+
+
+
+            LinkedList list2 = new LinkedList();
+            list2.appendElement("x");
+            list2.appendElement("y");
+            list2.appendElement("z");
+
+
+            list1 = Program.zipList(list1, list2);
+
+            Assert.Equal("[a] ->[x] ->[b] ->[y] ->[c] ->[z] ->NULL", list1.toString());
+
+        }
+
+        [Fact]
+        // test  if Can successfully combine two list with first list is greater than the second list
+        public void Class08_Test2_ZipList2()
+        {
+            LinkedList list1 = new LinkedList();
+            list1.appendElement("a");
+            list1.appendElement("b");
+            list1.appendElement("c");
+
+
+
+            LinkedList list2 = new LinkedList();
+            list2.appendElement("x");
+            list2.appendElement("y");
+
+
+            list1 = Program.zipList(list1, list2);
+
+            Assert.Equal("[a] ->[x] ->[b] ->[y] ->[c] ->NULL", list1.toString());
+
+        }
+
+        [Fact]
+        // test  if Can successfully combine two list with second list is greater than the first list
+        public void Class08_Test3_ZipList3()
+        {
+            LinkedList list1 = new LinkedList();
+            list1.appendElement("a");
+            list1.appendElement("b");
+
+
+
+            LinkedList list2 = new LinkedList();
+            list2.appendElement("x");
+            list2.appendElement("y");
+            list2.appendElement("z");
+
+
+            list1 = Program.zipList(list1, list2);
+
+            Assert.Equal("[a] ->[x] ->[b] ->[y] ->[z] ->NULL", list1.toString());
+
+        }
+
+        [Fact]
+        // test  if Can successfully combine two empty lists 
+        public void Class08_Test4_ZipList_BothEmpty()
+        {
+            LinkedList list1 = new LinkedList();
+
+
+
+            LinkedList list2 = new LinkedList();
+
+
+
+            list1 = Program.zipList(list1, list2);
+
+            Assert.Null(list1.toString());
+
+        }
+
+        [Fact]
+        // test  if Can successfully combine two list with first list is empty
+        public void Class08_Test5_ZipList_FirstEmpty()
+        {
+            LinkedList list1 = new LinkedList();
+
+
+
+
+            LinkedList list2 = new LinkedList();
+            list2.appendElement("x");
+            list2.appendElement("y");
+            list2.appendElement("z");
+
+
+            list1 = Program.zipList(list1, list2);
+
+            Assert.Equal("[x] ->[y] ->[z] ->NULL", list1.toString());
+
+        }
+
+
+        [Fact]
+        // test  if Can successfully combine two list with second list is empty
+        public void Class08_Test6_ZipList_SecondEmpty()
+        {
+            LinkedList list1 = new LinkedList();
+            list1.appendElement("a");
+            list1.appendElement("b");
+            list1.appendElement("c");
+
+
+            LinkedList list2 = new LinkedList();
+
+
+
+            list1 = Program.zipList(list1, list2);
+
+            Assert.Equal("[a] ->[b] ->[c] ->NULL", list1.toString());
+
+        }
+
+
+
 
     }
 }
