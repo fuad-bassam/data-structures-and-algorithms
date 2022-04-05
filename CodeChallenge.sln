@@ -29,6 +29,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "read", "read", "{E3B87B15-A142-443D-B7E7-2F11B27C74BA}"
 	ProjectSection(SolutionItems) = preProject
 		read\ArrayBinarySearch.md = read\ArrayBinarySearch.md
+		read\Class8_linked-list-zip.md = read\Class8_linked-list-zip.md
 		read\InsertToMiddleOfAnArray.md = read\InsertToMiddleOfAnArray.md
 		read\linked-list-kth.md = read\linked-list-kth.md
 		read\LinkedListInsertions.md = read\LinkedListInsertions.md
@@ -41,6 +42,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class7", "Class7", "{80BDBB
 		image\Class7\Class7_run.PNG = image\Class7\Class7_run.PNG
 		image\Class7\class7_test.PNG = image\Class7\class7_test.PNG
 		image\Class7\class7_WB.PNG = image\Class7\class7_WB.PNG
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "class8", "class8", "{795DD0F4-5C17-43CB-BE0C-3AAE3289AD68}"
+	ProjectSection(SolutionItems) = preProject
+		image\class8\Code8_1.PNG = image\class8\Code8_1.PNG
+		image\class8\Code8_2.PNG = image\class8\Code8_2.PNG
+		image\class8\Code8_3.PNG = image\class8\Code8_3.PNG
+		image\class8\codeChallenge8_WB.PNG = image\class8\codeChallenge8_WB.PNG
+		image\class8\text_class8.PNG = image\class8\text_class8.PNG
 	EndProjectSection
 EndProject
 Global
@@ -65,6 +75,7 @@ Global
 		{06A9EDE1-E11E-418C-93C0-DECBCE194C16} = {67A50197-05C5-4CE1-B995-AC7C5A9390F5}
 		{E3B87B15-A142-443D-B7E7-2F11B27C74BA} = {67A50197-05C5-4CE1-B995-AC7C5A9390F5}
 		{80BDBB8E-13F6-4F77-B550-41058E5FC412} = {06A9EDE1-E11E-418C-93C0-DECBCE194C16}
+		{795DD0F4-5C17-43CB-BE0C-3AAE3289AD68} = {06A9EDE1-E11E-418C-93C0-DECBCE194C16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC7249AF-6D54-4A0B-BE9B-99A27B493FB2}

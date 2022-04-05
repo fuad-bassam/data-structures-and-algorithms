@@ -5,7 +5,7 @@ using System;
 namespace ConsoleApp1
 {
 
-    class Program
+    public class Program
     {
         
 
@@ -101,13 +101,92 @@ namespace ConsoleApp1
 
         }
 
+
+
+        //call-Challenge8-linked-list-zip
+
+        public static LinkedList zipList(LinkedList list1, LinkedList list2)
+        {
+            Node pointer = list1.FirstNode;
+            Node selectNode;
+
+            if (pointer == null)
+                return list2;
+
+
+
+
+            while (pointer != null)
+            {
+                if (  list2.FirstNode != null)
+                {
+                    selectNode = list2.FirstNode;
+
+               
+                     list2.FirstNode = list2.FirstNode.next;
+
+
+                    selectNode.next = pointer.next;
+                    pointer.next = selectNode;
+
+                    if ( pointer.next.next == null && list2.FirstNode != null)
+                    {
+                        pointer.next.next = list2.FirstNode;
+                        return list1;
+                    }
+
+
+
+                    pointer = pointer.next.next;
+                }
+                else
+                {
+                    return list1;
+                }
+
+            }
+
+
+            
+
+
+            return list1;
+        }
         static void Main(string[] args)
         {
 
 
-            //Class7 methods kthFromEndList
 
-          //  Call_LinkedList3();
+
+            ///////////Class8 methods  linked-list-zip
+            Console.WriteLine("List 1");
+
+            LinkedList list1 = new LinkedList();
+            list1.appendElement("a");
+            list1.appendElement("b");
+           // list1.appendElement("c");
+
+            Console.WriteLine( "\n List 2");
+
+            LinkedList list2 = new LinkedList();
+            list2.appendElement("x");
+            list2.appendElement("y");
+            list2.appendElement("z");
+
+
+            Console.WriteLine("\n Zip list1 and list2");
+            list1 =  zipList(list1,list2);
+
+            Console.WriteLine(list1.toString());
+
+
+            /////////////////////////
+
+
+
+            ////////Class7 methods kthFromEndList
+
+            //  Call_LinkedList3();
 
             //////////////////////////
 
@@ -116,7 +195,7 @@ namespace ConsoleApp1
 
 
 
-             Call_LinkedList2();
+            // Call_LinkedList2();
 
             ////////////////////
 
