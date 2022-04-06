@@ -155,32 +155,55 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
+            ///////////Class 10: Stack And Queue
+
+            Stack stack = new Stack();
+
+            stack.push("s");
+            Console.WriteLine(stack.peek());
+            Console.WriteLine(stack.pop());
+
+            if (stack.isEmpty())
+            {
+                Console.WriteLine("stack is empty");
+            }
 
 
+            Queue queue = new Queue();
 
-            ///////////Class8 methods  linked-list-zip
-            Console.WriteLine("List 1");
+            if (queue.isEmpty())
+            {
+                Console.WriteLine("queue is empty");
+            }
+            queue.enqueue("x");
+            queue.peek();
+            queue.dequeue();
 
-            LinkedList list1 = new LinkedList();
-            list1.appendElement("a");
-            list1.appendElement("b");
-           // list1.appendElement("c");
+            ///////////////////////////////////
 
-            Console.WriteLine( "\n List 2");
+            /////////////Class8 methods  linked-list-zip
+            //Console.WriteLine("List 1");
 
-            LinkedList list2 = new LinkedList();
-            list2.appendElement("x");
-            list2.appendElement("y");
-            list2.appendElement("z");
+            //LinkedList list1 = new LinkedList();
+            //list1.appendElement("a");
+            //list1.appendElement("b");
+            //list1.appendElement("c");
+
+            //Console.WriteLine( "\n List 2");
+
+            //LinkedList list2 = new LinkedList();
+            //list2.appendElement("x");
+            //list2.appendElement("y");
+            //list2.appendElement("z");
 
 
-            Console.WriteLine("\n Zip list1 and list2");
-            list1 =  zipList(list1,list2);
+            //Console.WriteLine("\n Zip list1 and list2");
+            //list1 =  zipList(list1,list2);
 
-            Console.WriteLine(list1.toString());
+            //Console.WriteLine(list1.toString());
 
 
-            /////////////////////////
+            ///////////////////////////
 
 
 

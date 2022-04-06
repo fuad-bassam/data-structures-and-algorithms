@@ -29,6 +29,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "read", "read", "{E3B87B15-A142-443D-B7E7-2F11B27C74BA}"
 	ProjectSection(SolutionItems) = preProject
 		read\ArrayBinarySearch.md = read\ArrayBinarySearch.md
+		Class10_StackAndQueue.md = Class10_StackAndQueue.md
 		read\Class8_linked-list-zip.md = read\Class8_linked-list-zip.md
 		read\InsertToMiddleOfAnArray.md = read\InsertToMiddleOfAnArray.md
 		read\linked-list-kth.md = read\linked-list-kth.md
