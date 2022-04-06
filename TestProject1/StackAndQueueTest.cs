@@ -10,7 +10,7 @@ using ConsoleApp1;
 
 namespace TestProject1
 {
-    public class StackAndQueue
+    public class StackAndQueueTest
     {
         //Class 10: Stack And Queue
 
