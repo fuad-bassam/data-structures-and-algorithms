@@ -105,34 +105,36 @@ namespace ConsoleApp1
 
         //call-Challenge8-linked-list-zip
 
-        public static LinkedList zipList(LinkedList list1, LinkedList list2)
+        private static LinkedList zipList( LinkedList list1, LinkedList list2)
         {
-            Node pointer = list1.FirstNode;
+            LinkedList list3 =  list1.deepcopy();
+            LinkedList list4 =(LinkedList) list2.deepcopy();
+            Node pointer = list3.FirstNode;
             Node selectNode;
 
             if (pointer == null)
-                return list2;
+                return list4;
 
 
 
 
             while (pointer != null)
             {
-                if (  list2.FirstNode != null)
+                if (  list4.FirstNode != null)
                 {
-                    selectNode = list2.FirstNode;
+                    selectNode = list4.FirstNode;
 
                
-                     list2.FirstNode = list2.FirstNode.next;
+                     list4.FirstNode = list4.FirstNode.next;
 
 
                     selectNode.next = pointer.next;
                     pointer.next = selectNode;
 
-                    if ( pointer.next.next == null && list2.FirstNode != null)
+                    if ( pointer.next.next == null && list4.FirstNode != null)
                     {
-                        pointer.next.next = list2.FirstNode;
-                        return list1;
+                        pointer.next.next = list4.FirstNode;
+                        return list3;
                     }
 
 
@@ -141,7 +143,7 @@ namespace ConsoleApp1
                 }
                 else
                 {
-                    return list1;
+                    return list3;
                 }
 
             }
@@ -150,60 +152,61 @@ namespace ConsoleApp1
             
 
 
-            return list1;
+            return list3;
         }
         static void Main(string[] args)
         {
 
-            ///////////Class 10: Stack And Queue
+            /////////////Class 10: Stack And Queue
 
-            Stack stack = new Stack();
+            //Stack stack = new Stack();
 
-            stack.push("s");
-            Console.WriteLine(stack.peek());
-            Console.WriteLine(stack.pop());
+            //stack.push("s");
+            //Console.WriteLine(stack.peek());
+            //Console.WriteLine(stack.pop());
 
-            if (stack.isEmpty())
-            {
-                Console.WriteLine("stack is empty");
-            }
-
-
-            Queue queue = new Queue();
-
-            if (queue.isEmpty())
-            {
-                Console.WriteLine("queue is empty");
-            }
-            queue.enqueue("x");
-            queue.peek();
-            queue.dequeue();
-
-            ///////////////////////////////////
-
-            /////////////Class8 methods  linked-list-zip
-            //Console.WriteLine("List 1");
-
-            //LinkedList list1 = new LinkedList();
-            //list1.appendElement("a");
-            //list1.appendElement("b");
-            //list1.appendElement("c");
-
-            //Console.WriteLine( "\n List 2");
-
-            //LinkedList list2 = new LinkedList();
-            //list2.appendElement("x");
-            //list2.appendElement("y");
-            //list2.appendElement("z");
+            //if (stack.isEmpty())
+            //{
+            //    Console.WriteLine("stack is empty");
+            //}
 
 
-            //Console.WriteLine("\n Zip list1 and list2");
-            //list1 =  zipList(list1,list2);
+            //Queue queue = new Queue();
 
-            //Console.WriteLine(list1.toString());
+            //if (queue.isEmpty())
+            //{
+            //    Console.WriteLine("queue is empty");
+            //}
+            //queue.enqueue("x");
+            //queue.peek();
+            //queue.dequeue();
+
+            /////////////////////////////////////
+
+            ///////////Class8 methods  linked-list-zip
+            Console.WriteLine("List 1");
+
+            LinkedList list1 = new LinkedList();
+            list1.appendElement("a");
+            list1.appendElement("b");
+            list1.appendElement("c");
+
+            Console.WriteLine("\n List 2");
+
+            LinkedList list2 = new LinkedList();
+            list2.appendElement("x");
+            list2.appendElement("y");
+            list2.appendElement("z");
 
 
-            ///////////////////////////
+            Console.WriteLine("\n Zip list1 and list2");
+            LinkedList list5 = zipList(list1, list2);
+
+            Console.WriteLine(list1.toString());
+            Console.WriteLine(list5.toString());
+            Console.WriteLine(list2.toString());
+
+            /////////////////////////
 
 
 
