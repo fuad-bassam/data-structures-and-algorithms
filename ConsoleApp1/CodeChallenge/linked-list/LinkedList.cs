@@ -36,6 +36,26 @@ namespace ConsoleApp1
         Node head;
 
 
+
+
+        public LinkedList deepcopy() {
+
+            LinkedList newList = new LinkedList();
+
+            Node preHead = this.head;
+           // Node pointerNode = null;
+         
+          
+            while (preHead != null)
+            {
+                newList.appendElement(preHead.Value);
+
+                preHead = preHead.next;
+            }
+
+            return newList;
+        }
+
         /// <summary>
         /// getter and aetter for the first node in list (the head)
         /// </summary>
@@ -128,7 +148,7 @@ namespace ConsoleApp1
             Node addVal = new Node(val);
             addVal.next = head;
             head = addVal;
-            Console.WriteLine("add " + head.Value);
+           Console.WriteLine("add " + head.Value);
 
         }
 
