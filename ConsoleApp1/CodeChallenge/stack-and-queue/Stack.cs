@@ -37,7 +37,7 @@ namespace ConsoleApp1
     {
 
         //FILO
-        Node top = new Node();
+        Node top = null;
 
         /// <summary>
         /// method push to add elemnt in the stack 
@@ -58,7 +58,7 @@ namespace ConsoleApp1
         /// <returns></returns>
         public string pop()
         {
-            if (top.Value == null)
+            if (top == null)
             {
                 // return null;
                 return "Stack is empty !!";
@@ -78,7 +78,7 @@ namespace ConsoleApp1
         public string peek()
         {
 
-            if (top.Value == null)
+            if (top == null)
             {
                 return "Stack is empty !!";
             }
@@ -95,7 +95,7 @@ namespace ConsoleApp1
         /// <returns></returns>
         public bool isEmpty()
         {
-            if (top.Value == null )
+            if (top == null )
             {
                 return true;
             }
