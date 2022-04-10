@@ -9,9 +9,9 @@ namespace ConsoleApp1
    public class Queue
     {
 
-        Node  front = new Node();
+        Node front = null;
 
-        Node rear;
+        Node rear = null;
 
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace ConsoleApp1
         public void enqueue(String value)
      {
             Node node = new Node(value);
-            if (front.Value == null)
+            if (front == null)
             {
                 front = node;
                 rear = front;
