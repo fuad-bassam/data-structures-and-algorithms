@@ -25,7 +25,7 @@ namespace ConsoleApp1
         }
 
 
-
+        #region call-linked-list
         ////////// call-Challenge5-linked-list
         public static void Call_LinkedList() {
             try
@@ -47,7 +47,9 @@ namespace ConsoleApp1
             }
           
         }
+        #endregion
 
+        #region call-linked-list
         ////////// call-Challenge6-linked-list
         public static void Call_LinkedList2()
         {
@@ -72,7 +74,9 @@ namespace ConsoleApp1
             }
 
         }
+        #endregion
 
+        #region call-linked-list-kth
         //call-Challenge7-linked-list-kth
 
         public static void Call_LinkedList3()
@@ -100,8 +104,9 @@ namespace ConsoleApp1
             }
 
         }
+        #endregion
 
-
+        #region call-linked-list-zip
 
         //call-Challenge8-linked-list-zip
 
@@ -154,14 +159,60 @@ namespace ConsoleApp1
 
             return list3;
         }
+        #endregion
+
         static void Main(string[] args)
         {
+            #region Class 11: stack-queue-pseudo
+            /////////////Class 11: stack-queue-pseudo
 
+
+
+            PseudoQueue pseudoqueue = new PseudoQueue();
+
+            //pseudoqueue.enqueue("a");
+            //Console.WriteLine("enqueue " + pseudoqueue.peek());
+
+            //pseudoqueue.enqueue("b");
+            //Console.WriteLine("enqueue b ");
+
+            //pseudoqueue.enqueue("c");
+            //Console.WriteLine("enqueue c \n");
+
+
+            //Console.WriteLine("dequeue "+pseudoqueue.dequeue());
+
+            //Console.WriteLine("dequeue " + pseudoqueue.dequeue());
+
+            //Console.WriteLine("dequeue " + pseudoqueue.dequeue());
+
+            Console.WriteLine(pseudoqueue.peek());
+            pseudoqueue.enqueue("a");
+            pseudoqueue.enqueue("b");
+            pseudoqueue.enqueue("c");
+            Console.WriteLine(pseudoqueue.peek());
+            Console.WriteLine(pseudoqueue.dequeue());
+            pseudoqueue.enqueue("d");
+            pseudoqueue.enqueue("e");
+            Console.WriteLine(pseudoqueue.dequeue());
+
+            Console.WriteLine(pseudoqueue.dequeue());
+
+            Console.WriteLine(pseudoqueue.dequeue());
+            Console.WriteLine(pseudoqueue.peek());
+            /////////////////////////////////////
+            #endregion
+
+
+
+            #region Class 10: Stack And Queue
             /////////////Class 10: Stack And Queue
 
             //Stack stack = new Stack();
+
             //Console.WriteLine(stack.peek());
             //Console.WriteLine(stack.pop());
+
             //stack.push("s");
             //Console.WriteLine(stack.peek());
             //Console.WriteLine(stack.pop());
@@ -172,20 +223,22 @@ namespace ConsoleApp1
             //}
 
 
-            Queue queue = new Queue();
+            //Queue queue = new Queue();
 
-            if (queue.isEmpty())
-            {
-                Console.WriteLine("queue is empty");
-            }
-            queue.enqueue("x");
-            Console.WriteLine(queue.peek());
-            Console.WriteLine(queue.dequeue());
+            //if (queue.isEmpty())
+            //{
+            //    Console.WriteLine("queue is empty");
+            //}
+            //queue.enqueue("x");
+            //Console.WriteLine(queue.peek());
+            //Console.WriteLine(queue.dequeue());
 
-            Console.WriteLine(queue.peek());
-            Console.WriteLine(queue.dequeue());
+            //Console.WriteLine(queue.peek());
+            //Console.WriteLine(queue.dequeue());
             /////////////////////////////////////
+            #endregion
 
+            #region Class8 methods  linked-list-zip
             ///////////Class8 methods  linked-list-zip
             //Console.WriteLine("List 1");
 
@@ -210,16 +263,18 @@ namespace ConsoleApp1
             //Console.WriteLine(list2.toString());
 
             /////////////////////////
+            #endregion
 
-
+            #region Class7 methods kthFromEndList
 
             ////////Class7 methods kthFromEndList
 
             //  Call_LinkedList3();
 
             //////////////////////////
+            #endregion
 
-
+            #region linked-list-insertions
             ////////// linked-list-insertions
 
 
@@ -228,21 +283,17 @@ namespace ConsoleApp1
 
             ////////////////////
 
+            #endregion
 
-
-
-
-
-
-
-
-
+            #region linked-list Challenge
 
             /////////linked-list Challenge
 
             // Call_LinkedList();
 
             //////////////
+            #region
+            #endregion
 
             /////////array-reverse challenge           
             //String[] arrReverse = { "5", "6", "7" };
@@ -250,8 +301,9 @@ namespace ConsoleApp1
             //Class1.ShowArray(Class1.ReversArray(arrReverse));
 
             ////////////////
+            #endregion
 
-
+            #region array-insert-shift challenge
             /////////////// array-insert-shift challenge
             //int[] arrinsertShift = { 1, 2, 3, 4 };
 
@@ -277,8 +329,9 @@ namespace ConsoleApp1
             //arrayIntElementToConsole(arrinsertShift02);
 
             /////////////////////////////////////////
+            #endregion
 
-
+            #region array-binary-search challenge
             ////////array-binary-search challenge
 
             //int[] binarySearch_arr = { 2, 3, 2, 7, 4, 6, 5 };
@@ -286,6 +339,12 @@ namespace ConsoleApp1
 
             //Console.WriteLine(Class3.BinarySearch(Class3.SortArray(binarySearch_arr), 9));
             //////////////////////////
+            #endregion
+
+
+
+
+
 
 
             Console.ReadKey();
