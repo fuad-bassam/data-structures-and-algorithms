@@ -37,7 +37,7 @@ namespace ConsoleApp1
     {
 
         //FILO
-        Node top = null;
+       public Node top = null;
 
         /// <summary>
         /// method push to add elemnt in the stack 
@@ -49,7 +49,7 @@ namespace ConsoleApp1
 
              node.next= top;
             top = node;
-            Console.WriteLine($"Push {value} done successfully");
+          //  Console.WriteLine($"Push {value} done successfully");
         }
 
         /// <summary>

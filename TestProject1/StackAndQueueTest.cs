@@ -12,6 +12,69 @@ namespace TestProject1
 {
     public class StackAndQueueTest
     {
+
+        ///Class11-PseudoQueue
+
+
+        [Fact]
+        //Can successfully create empty stackQueue
+        public void Class11_PseudoQueueTest1()
+        {
+            PseudoQueue stackQueue = new PseudoQueue();
+
+            
+            Assert.Equal("Stack is empty !!", stackQueue.peek());
+        }
+        [Fact]
+        //Can successfully dequeue empty stackQueue
+        public void Class11_PseudoQueueTest2()
+        {
+            PseudoQueue stackQueue = new PseudoQueue();
+
+
+            Assert.Equal("Stack is empty !!", stackQueue.dequeue());
+        }
+        [Fact]
+        //Can successfully work enqueue in stackQueue
+        public void Class11_Enqueue_PseudoQueueTest()
+        {
+            PseudoQueue stackQueue = new PseudoQueue();
+            stackQueue.enqueue("a");
+            stackQueue.enqueue("b");
+            stackQueue.enqueue("c");
+
+            Assert.Equal("a", stackQueue.peek());
+        }
+        [Fact]
+        //Can successfully work dequeue in stackQueue
+        public void Class11_Dequeue_PseudoQueueTest()
+        {
+            PseudoQueue stackQueue = new PseudoQueue();
+            stackQueue.enqueue("a");
+            stackQueue.enqueue("b");
+            stackQueue.enqueue("c");
+
+            Assert.Equal("a", stackQueue.dequeue());
+        }
+
+        [Fact]
+        //Can successfully work dequeue in stackQueue
+        public void Class11_Dequeue_PseudoQueueTest2()
+        {
+            PseudoQueue stackQueue = new PseudoQueue();
+            stackQueue.enqueue("a");
+            stackQueue.enqueue("b");
+            stackQueue.enqueue("c");
+            stackQueue.dequeue();
+            Assert.Equal("b", stackQueue.peek());
+        }
+
+
+
+
+
+
+
         //Class 10: Stack And Queue
 
         [Fact]
