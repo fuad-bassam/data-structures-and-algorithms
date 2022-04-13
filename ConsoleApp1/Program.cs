@@ -186,20 +186,20 @@ namespace ConsoleApp1
 
             //Console.WriteLine("dequeue " + pseudoqueue.dequeue());
 
-            Console.WriteLine(pseudoqueue.peek());
-            pseudoqueue.enqueue("a");
-            pseudoqueue.enqueue("b");
-            pseudoqueue.enqueue("c");
-            Console.WriteLine(pseudoqueue.peek());
-            Console.WriteLine(pseudoqueue.dequeue());
-            pseudoqueue.enqueue("d");
-            pseudoqueue.enqueue("e");
-            Console.WriteLine(pseudoqueue.dequeue());
+            //Console.WriteLine(pseudoqueue.peek());
+            //pseudoqueue.enqueue("a");
+            //pseudoqueue.enqueue("b");
+            //pseudoqueue.enqueue("c");
+            //Console.WriteLine(pseudoqueue.peek());
+            //Console.WriteLine(pseudoqueue.dequeue());
+            //pseudoqueue.enqueue("d");
+            //pseudoqueue.enqueue("e");
+            //Console.WriteLine(pseudoqueue.dequeue());
 
-            Console.WriteLine(pseudoqueue.dequeue());
+            //Console.WriteLine(pseudoqueue.dequeue());
 
-            Console.WriteLine(pseudoqueue.dequeue());
-            Console.WriteLine(pseudoqueue.peek());
+            //Console.WriteLine(pseudoqueue.dequeue());
+            //Console.WriteLine(pseudoqueue.peek());
             /////////////////////////////////////
             #endregion
 
@@ -223,18 +223,22 @@ namespace ConsoleApp1
             //}
 
 
-            //Queue queue = new Queue();
+            Queue queue = new Queue();
 
-            //if (queue.isEmpty())
-            //{
-            //    Console.WriteLine("queue is empty");
-            //}
-            //queue.enqueue("x");
-            //Console.WriteLine(queue.peek());
-            //Console.WriteLine(queue.dequeue());
+            if (queue.isEmpty())
+            {
+                Console.WriteLine("queue is empty");
+            }
+            queue.enqueue("a");
+            queue.enqueue("b");
+            queue.enqueue("c");
+            Console.WriteLine(queue.peek());
+            Console.WriteLine(queue.dequeue());
 
-            //Console.WriteLine(queue.peek());
-            //Console.WriteLine(queue.dequeue());
+            Console.WriteLine(queue.peek());
+            Console.WriteLine(queue.dequeue());
+            Console.WriteLine(queue.dequeue());
+            Console.WriteLine(queue.dequeue());
             /////////////////////////////////////
             #endregion
 

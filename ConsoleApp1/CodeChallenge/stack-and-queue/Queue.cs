@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-   public class Queue
+    public class Queue
     {
 
         Node front = null;
@@ -19,9 +19,9 @@ namespace ConsoleApp1
         /// </summary>
         /// <param name="value"></param>
         public void enqueue(String value)
-     {
+        {
             Node node = new Node(value);
-            if (front == null)
+            if (rear == null)
             {
                 front = node;
                 rear = front;
@@ -29,7 +29,7 @@ namespace ConsoleApp1
             else
             {
                 rear.next = node;
-                rear = rear.next;
+                rear = node;
             }
             Console.WriteLine($"Enqueue {value} done successfully");
 
@@ -39,40 +39,53 @@ namespace ConsoleApp1
         /// to renove the last element in the Queue
         /// </summary>
         /// <returns></returns>
-     public string dequeue()
-     {
+        public string dequeue()
+        {
+
+            if (isEmpty())
+            {
+                front = null;
+                return null;
+            }
+
             Node node = front;
-            if (front == null)
+            string node2 = front.Value;
+           
+            if (node.next == null)
             {
-                //  return null;
-                return "Queue is empty !!";
-            }
-            front = front.next;
-            if (isEmpty())
-            {
+                string val = node.Value;
                 rear = null;
+                front = null;
+
+                return val;
+
             }
-            return node.Value;
+
+            
+                front = node.next;
+
+            
+            return node2;
 
 
-      }
-     public String peek()
-     {
+        }
+        public String peek()
+        {
             if (isEmpty())
             {
                 return "Queue is empty !!";
             }
 
-            return rear.Value;
+            return front.Value;
 
 
-     }
+        }
         /// <summary>
         ///  to check if the Queue is null or not
         /// </summary>
         /// <returns></returns>
         public bool isEmpty()
-     {
+        {
             if (front == null)
             {
                 return true;
@@ -83,7 +96,7 @@ namespace ConsoleApp1
             }
 
 
-      }
+        }
 
 
     }

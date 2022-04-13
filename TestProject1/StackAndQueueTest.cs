@@ -201,7 +201,7 @@ namespace TestProject1
 
 
 
-            Assert.Equal("abcd", result1);
+            Assert.Equal("aaaa", result1);
 
         }
 
@@ -228,7 +228,7 @@ namespace TestProject1
             queue.enqueue("b");
             queue.enqueue("c");
 
-            Assert.Equal("c", queue.peek());
+            Assert.Equal("a", queue.peek());
         }
 
         [Fact]
