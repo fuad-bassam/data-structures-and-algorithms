@@ -12,6 +12,85 @@ namespace TestProject1
 {
     public class StackAndQueueTest
     {
+        // Class 12: stack-queue-animal-shelter
+
+        [Fact]
+        //Can successfully enqueue to AnimalShelter
+        public void Class12_EnqeueuAnimalShelter()
+        {
+            AnimalShelter animalShelter = new AnimalShelter();
+
+            animalShelter.enqueue("cat1","cat");
+
+            Assert.Equal("cat1", animalShelter.front.name) ;
+        }
+        [Fact]
+        //Can successfully enqueue to AnimalShelter
+        public void Class12_WrongEnqeueuAnimalShelter()
+        {
+            AnimalShelter animalShelter = new AnimalShelter();
+
+            animalShelter.enqueue("lion1", "lion");
+
+            Assert.Null(animalShelter.front);
+        }
+
+
+        [Fact]
+        //Can successfully many enqueue to AnimalShelter
+        public void Class12_EnqeueuMultyAnimalShelter()
+        {
+            AnimalShelter animalShelter = new AnimalShelter();
+
+            animalShelter.enqueue("cat1", "cat");
+            animalShelter.enqueue("cat2", "cat");
+            animalShelter.enqueue("cat3", "CAT");
+            animalShelter.enqueue("dog2", "Dog");
+            animalShelter.enqueue("dog5", "dog");
+            Assert.Equal("cat1", animalShelter.front.name);
+        }
+        [Fact]
+        //Can successfully dequeue from AnimalShelter
+        public void Class12_DeqeueuAnimalShelter()
+        {
+            AnimalShelter animalShelter = new AnimalShelter();
+
+            animalShelter.enqueue("cat1", "cat");
+            animalShelter.enqueue("cat2", "cat");
+
+            Assert.Equal("cat1", animalShelter.dequeue());
+        }
+        [Fact]
+        //Can successfully dequeue empty AnimalShelter
+        public void Class12_DeqeueuEmptyAnimalShelter()
+        {
+            AnimalShelter animalShelter = new AnimalShelter();
+
+          
+
+            Assert.Null(animalShelter.dequeue());
+        }
+
+        [Fact]
+        //Can successfully many dequeue from AnimalShelter
+        public void Class12_DeqeueuMultyAnimalShelter()
+        {
+            AnimalShelter animalShelter = new AnimalShelter();
+
+            animalShelter.enqueue("cat1", "cat");
+            animalShelter.enqueue("cat2", "cat");
+            animalShelter.enqueue("cat3", "CAT");
+            animalShelter.enqueue("dog2", "Dog");
+            animalShelter.enqueue("dog5", "dog");
+            animalShelter.dequeue();
+            animalShelter.dequeue();
+            animalShelter.dequeue();
+            Assert.Equal("dog2", animalShelter.dequeue());
+        }
+
+
+
+        ///////////////////////
 
         ///Class11-PseudoQueue
 

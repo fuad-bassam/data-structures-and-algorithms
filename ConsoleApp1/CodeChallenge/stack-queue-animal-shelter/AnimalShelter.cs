@@ -30,6 +30,7 @@ namespace ConsoleApp1
             else
             {
                 rare.next = animal;
+                rare = animal;
             }
             Console.WriteLine($"added " + name);
         }
