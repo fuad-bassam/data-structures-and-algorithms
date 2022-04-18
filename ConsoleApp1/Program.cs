@@ -163,12 +163,31 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
+
+            #region Class 12: stack-queue-animal-shelter
+
+            AnimalShelter animalShelter = new AnimalShelter();
+            Console.WriteLine( animalShelter.dequeue());
+
+            animalShelter.enqueue("cat1", "cat");
+
+            animalShelter.enqueue("cat2", "cat");
+
+            animalShelter.enqueue("dog2", "cat");
+
+
+            animalShelter.enqueue("lion2", "lion");
+            animalShelter.enqueue("cat5", "CAT");
+            Console.WriteLine(animalShelter.dequeue());
+            Console.WriteLine(animalShelter.dequeue());
+            #endregion
+
             #region Class 11: stack-queue-pseudo
             /////////////Class 11: stack-queue-pseudo
 
 
 
-            PseudoQueue pseudoqueue = new PseudoQueue();
+            //PseudoQueue pseudoqueue = new PseudoQueue();
 
             //pseudoqueue.enqueue("a");
             //Console.WriteLine("enqueue " + pseudoqueue.peek());
@@ -180,14 +199,15 @@ namespace ConsoleApp1
             //Console.WriteLine("enqueue c \n");
 
 
-            //Console.WriteLine("dequeue "+pseudoqueue.dequeue());
+            //Console.WriteLine("dequeue " + pseudoqueue.dequeue());
 
             //Console.WriteLine("dequeue " + pseudoqueue.dequeue());
 
             //Console.WriteLine("dequeue " + pseudoqueue.dequeue());
 
             //Console.WriteLine(pseudoqueue.peek());
-            //pseudoqueue.enqueue("a");
+            //pseudoqueue.enqueue("f");
+            //Console.WriteLine(pseudoqueue.peek());
             //pseudoqueue.enqueue("b");
             //pseudoqueue.enqueue("c");
             //Console.WriteLine(pseudoqueue.peek());
@@ -199,11 +219,9 @@ namespace ConsoleApp1
             //Console.WriteLine(pseudoqueue.dequeue());
 
             //Console.WriteLine(pseudoqueue.dequeue());
-            //Console.WriteLine(pseudoqueue.peek());
+            //Console.WriteLine("aaa "+pseudoqueue.peek());
             /////////////////////////////////////
             #endregion
-
-
 
             #region Class 10: Stack And Queue
             /////////////Class 10: Stack And Queue
@@ -223,22 +241,22 @@ namespace ConsoleApp1
             //}
 
 
-            Queue queue = new Queue();
+            //Queue queue = new Queue();
 
-            if (queue.isEmpty())
-            {
-                Console.WriteLine("queue is empty");
-            }
-            queue.enqueue("a");
-            queue.enqueue("b");
-            queue.enqueue("c");
-            Console.WriteLine(queue.peek());
-            Console.WriteLine(queue.dequeue());
+            //if (queue.isEmpty())
+            //{
+            //    Console.WriteLine("queue is empty");
+            //}
+            //queue.enqueue("a");
+            //queue.enqueue("b");
+            //queue.enqueue("c");
+            //Console.WriteLine(queue.peek());
+            //Console.WriteLine(queue.dequeue());
 
-            Console.WriteLine(queue.peek());
-            Console.WriteLine(queue.dequeue());
-            Console.WriteLine(queue.dequeue());
-            Console.WriteLine(queue.dequeue());
+            //Console.WriteLine(queue.peek());
+            //Console.WriteLine(queue.dequeue());
+            //Console.WriteLine(queue.dequeue());
+            //Console.WriteLine(queue.dequeue());
             /////////////////////////////////////
             #endregion
 

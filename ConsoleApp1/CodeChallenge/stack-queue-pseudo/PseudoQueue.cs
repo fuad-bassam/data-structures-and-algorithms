@@ -21,6 +21,7 @@ namespace ConsoleApp1
             while (stackQueue.peek() != "Stack is empty !!")
             {
                 stack1.push(stackQueue.pop());
+         
             }
 
             stack1.push(val);
