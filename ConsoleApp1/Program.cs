@@ -24,6 +24,51 @@ namespace ConsoleApp1
 
         }
 
+        #region Class 13: stack-queue-brackets
+
+        public static bool validateBrackets(string str)
+        {
+            Stack stack = new Stack();
+            foreach (char item in str)
+            {
+                if (item == '[' || item == '(' || item == '{')
+                {
+                    stack.push(item.ToString());
+                }
+                if (item == ']' || item == ')' || item == '}')
+                {
+                    string x;
+                    if (item == ']')
+                    {
+                        x = "[";
+                    }else if (item == ')')
+                    {
+                        x = "(";
+                    }else  
+                    {
+                        x = "{";
+                    }
+
+                    if (stack.peek() == x)
+                    {
+                        stack.pop();
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            if (stack.peek() == "Stack is empty !!")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
 
         #region call-linked-list
         ////////// call-Challenge5-linked-list
@@ -164,22 +209,31 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
+            #region Class 13: stack-queue-brackets
+
+            Console.WriteLine(validateBrackets("sds[]"));
+            Console.WriteLine(validateBrackets("{}(){}"));
+            Console.WriteLine(validateBrackets("()[[Extra Characters]]"));
+            Console.WriteLine(validateBrackets("{(})"));
+
+            #endregion
+
             #region Class 12: stack-queue-animal-shelter
 
-            AnimalShelter animalShelter = new AnimalShelter();
-            Console.WriteLine( animalShelter.dequeue());
+            //AnimalShelter animalShelter = new AnimalShelter();
+            //Console.WriteLine( animalShelter.dequeue());
 
-            animalShelter.enqueue("cat1", "cat");
+            //animalShelter.enqueue("cat1", "cat");
 
-            animalShelter.enqueue("cat2", "cat");
+            //animalShelter.enqueue("cat2", "cat");
 
-            animalShelter.enqueue("dog2", "cat");
+            //animalShelter.enqueue("dog2", "cat");
 
 
-            animalShelter.enqueue("lion2", "lion");
-            animalShelter.enqueue("cat5", "CAT");
-            Console.WriteLine(animalShelter.dequeue());
-            Console.WriteLine(animalShelter.dequeue());
+            //animalShelter.enqueue("lion2", "lion");
+            //animalShelter.enqueue("cat5", "CAT");
+            //Console.WriteLine(animalShelter.dequeue());
+            //Console.WriteLine(animalShelter.dequeue());
             #endregion
 
             #region Class 11: stack-queue-pseudo
