@@ -19,20 +19,23 @@ namespace TestProject1
         public void Class12_EnqeueuAnimalShelter()
         {
             AnimalShelter animalShelter = new AnimalShelter();
+            Cat cat = new Cat("cat1");
 
-            animalShelter.enqueue("cat1","cat");
-
-            Assert.Equal("cat1", animalShelter.front.name) ;
+            animalShelter.enqueue(cat);
+            Assert.Equal("cat1", animalShelter.front.animal.value) ;
         }
         [Fact]
         //Can successfully enqueue to AnimalShelter
         public void Class12_WrongEnqeueuAnimalShelter()
         {
             AnimalShelter animalShelter = new AnimalShelter();
+            Cat cat = new Cat("cat1");
+            Cat cat2 = new Cat("cat2");
 
-            animalShelter.enqueue("lion1", "lion");
+            animalShelter.enqueue(cat);
+            animalShelter.enqueue(cat2);
 
-            Assert.Null(animalShelter.front);
+            Assert.Null(animalShelter.dequeue("lion"));
         }
 
 
@@ -42,12 +45,18 @@ namespace TestProject1
         {
             AnimalShelter animalShelter = new AnimalShelter();
 
-            animalShelter.enqueue("cat1", "cat");
-            animalShelter.enqueue("cat2", "cat");
-            animalShelter.enqueue("cat3", "CAT");
-            animalShelter.enqueue("dog2", "Dog");
-            animalShelter.enqueue("dog5", "dog");
-            Assert.Equal("cat1", animalShelter.front.name);
+            Cat cat = new Cat("cat1");
+            Cat cat2 = new Cat("cat2");
+            Cat cat3 = new Cat("cat3");
+            Dog dog = new Dog("dog1");
+
+
+            animalShelter.enqueue(cat);
+            animalShelter.enqueue(cat2);
+            animalShelter.enqueue(cat3);
+            animalShelter.enqueue(dog);
+
+            Assert.Equal("cat1", animalShelter.front.animal.value);
         }
         [Fact]
         //Can successfully dequeue from AnimalShelter
@@ -55,10 +64,13 @@ namespace TestProject1
         {
             AnimalShelter animalShelter = new AnimalShelter();
 
-            animalShelter.enqueue("cat1", "cat");
-            animalShelter.enqueue("cat2", "cat");
+            Cat cat = new Cat("cat1");
+            Cat cat2 = new Cat("cat2");
 
-            Assert.Equal("cat1", animalShelter.dequeue());
+            animalShelter.enqueue(cat);
+            animalShelter.enqueue(cat2);
+
+            Assert.Equal("cat1", animalShelter.dequeue("cat"));
         }
         [Fact]
         //Can successfully dequeue empty AnimalShelter
@@ -68,7 +80,7 @@ namespace TestProject1
 
           
 
-            Assert.Null(animalShelter.dequeue());
+            Assert.Null(animalShelter.dequeue("cat"));
         }
 
         [Fact]
@@ -77,15 +89,25 @@ namespace TestProject1
         {
             AnimalShelter animalShelter = new AnimalShelter();
 
-            animalShelter.enqueue("cat1", "cat");
-            animalShelter.enqueue("cat2", "cat");
-            animalShelter.enqueue("cat3", "CAT");
-            animalShelter.enqueue("dog2", "Dog");
-            animalShelter.enqueue("dog5", "dog");
-            animalShelter.dequeue();
-            animalShelter.dequeue();
-            animalShelter.dequeue();
-            Assert.Equal("dog2", animalShelter.dequeue());
+            Cat cat = new Cat("cat1");
+            Cat cat2 = new Cat("cat2");
+
+            Cat cat3 = new Cat("cat3");
+            Dog dog = new Dog("dog1");
+            Cat cat4 = new Cat("cat4");
+            Dog dog2 = new Dog("dog2");
+
+            animalShelter.enqueue(cat);
+            animalShelter.enqueue(cat2);
+            animalShelter.enqueue(cat3);
+            animalShelter.enqueue(dog);
+            animalShelter.enqueue(cat4);
+            animalShelter.enqueue(dog2);
+
+            animalShelter.dequeue("cat");
+            animalShelter.dequeue("dog");
+            animalShelter.dequeue("cat");
+            Assert.Equal("dog2", animalShelter.dequeue("dog"));
         }
 
 

@@ -1,11 +1,11 @@
 # Challenge Summary :file_folder:
-create Queue that take just "cat"and "dog" as animals object.
+create Queue that take just cat and dog as animals object.
 
 ## Whiteboard Process  :notebook:
 ![img](../image/Class12/Class12_WB.PNG)
 
 ## Approach & Efficiency :envelope:
-using the same Queue class methods and eidt it as the requerment 
+using the Queue class methods and eidt it as the requerment to accepted Cat and Dog object just 
 ## Solution :beetle:
 ![img](../image/Class12/run_12.PNG)
 ## TEST :notebook:
