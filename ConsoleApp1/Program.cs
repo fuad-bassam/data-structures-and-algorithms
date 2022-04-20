@@ -211,29 +211,40 @@ namespace ConsoleApp1
 
             #region Class 13: stack-queue-brackets
 
-            Console.WriteLine(validateBrackets("sds[]"));
-            Console.WriteLine(validateBrackets("{}(){}"));
-            Console.WriteLine(validateBrackets("()[[Extra Characters]]"));
-            Console.WriteLine(validateBrackets("{(})"));
+            //Console.WriteLine(validateBrackets("sds[]"));
+            //Console.WriteLine(validateBrackets("{}(){}"));
+            //Console.WriteLine(validateBrackets("()[[Extra Characters]]"));
+            //Console.WriteLine(validateBrackets("{(})"));
 
             #endregion
 
             #region Class 12: stack-queue-animal-shelter
 
-            //AnimalShelter animalShelter = new AnimalShelter();
-            //Console.WriteLine( animalShelter.dequeue());
+            AnimalShelter animalShelter = new AnimalShelter();
+            Console.WriteLine(animalShelter.dequeue("cat"));
+            Cat cat = new Cat("cat1");
+            Cat cat2 = new Cat("cat2");
+            Dog dog = new Dog("dog1");
+            Cat cat5 = new Cat("cat5");
+    
 
-            //animalShelter.enqueue("cat1", "cat");
 
-            //animalShelter.enqueue("cat2", "cat");
+           
 
-            //animalShelter.enqueue("dog2", "cat");
+            animalShelter.enqueue(cat);
+           
 
+            animalShelter.enqueue(cat2);
+            animalShelter.enqueue(dog);
+            Console.WriteLine(animalShelter.dequeue("Lion"));
+           animalShelter.enqueue(cat5);
 
-            //animalShelter.enqueue("lion2", "lion");
-            //animalShelter.enqueue("cat5", "CAT");
-            //Console.WriteLine(animalShelter.dequeue());
-            //Console.WriteLine(animalShelter.dequeue());
+           
+           
+            Console.WriteLine(animalShelter.dequeue("cat"));
+            Console.WriteLine(animalShelter.dequeue("cat"));
+            //Console.WriteLine(animalShelter.dequeue("cat"));
+            //Console.WriteLine(animalShelter.dequeue("dog"));
             #endregion
 
             #region Class 11: stack-queue-pseudo

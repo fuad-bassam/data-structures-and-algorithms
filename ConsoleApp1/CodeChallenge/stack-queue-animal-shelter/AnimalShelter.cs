@@ -10,42 +10,72 @@ namespace ConsoleApp1
     {
         public AnimalNode front { get; set; }
         public AnimalNode rare { get; set; }
-
-        public void enqueue(string name, string type)
+        public List<string> acceptedAnimal = new List<string>() { "cat", "dog" };
+        public void enqueue(Animal animal)
         {
-
-            if (type.ToLower() != "dog" && type.ToLower() != "cat")
+          
+            if (!acceptedAnimal.Contains(animal.type))
             {
-                Console.WriteLine($"can NOT added " + name);
                 return;
             }
+            AnimalNode animalNode = new AnimalNode(animal);
 
-
-            AnimalNode animal = new AnimalNode(name,type);
+           
+           
             if (front == null)
             {
-                front = animal;
+                front = animalNode;
                 rare = front;
             }
             else
             {
-                rare.next = animal;
-                rare = animal;
+                rare.next = animalNode;
+                rare = animalNode;
             }
-            Console.WriteLine($"added " + name);
+            Console.WriteLine($"added " + animalNode.animal.value);
         }
 
-        public string dequeue()
+        public string dequeue(string pref)
         {
-            if (front == null)
-                return null;
-            else
+            string result = null;
+           AnimalNode selectedNode = front;
+          
+            // if the queue is empty return null
+            if (selectedNode == null)
             {
-                string result1= front.name;
-                front = front.next;
-
-                return result1;
+                return null;
             }
+            //if the frirst element is the correct node deal with it as normal Queue
+            if (selectedNode.animal.type == pref.ToLower())
+            {
+                result = selectedNode.animal.value;
+                front = front.next;
+                return result; 
+            }
+            //if the frist element is Not the correct node, loop over items and check if the NEXT value is the correct node
+            
+            
+            while (selectedNode.next.animal.type != pref.ToLower())
+            {
+
+
+                selectedNode = selectedNode.next;
+                // if the result is not found in the queue
+                if (selectedNode.next == null)
+                    return null;
+            }
+
+            // if the last element is the correct node
+            if (selectedNode.next == rare)
+            {
+                rare = selectedNode;
+            }
+            //remove the node from the queue by making the previous node not point to the correct node but to the Next node from the correct node
+            result = selectedNode.next.animal.value;
+            selectedNode.next = selectedNode.next.next;
+         
+                return result;
+          
         }
     }
 }

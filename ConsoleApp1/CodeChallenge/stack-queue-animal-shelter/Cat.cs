@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-   public class Animal
+  public  class Cat : Animal
     {
-        public string value { get; set; }
 
-        public string type { get; set; }
+       public Cat(string name) {
 
-    
+            this.value = name;
+            this.type = "cat";
 
 
+
+        }
     }
-
-
 }
