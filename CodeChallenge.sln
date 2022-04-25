@@ -19,6 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "read", "read", "{E3B87B15-A
 		read\Class11_stack-and-queue.md = read\Class11_stack-and-queue.md
 		read\Class12_stack-queue-animal-shelter.md = read\Class12_stack-queue-animal-shelter.md
 		read\Class13_stack-queue-brackets.md = read\Class13_stack-queue-brackets.md
+		Class16_tree-max.md = Class16_tree-max.md
 		read\Class8_linked-list-zip.md = read\Class8_linked-list-zip.md
 		read\InsertToMiddleOfAnArray.md = read\InsertToMiddleOfAnArray.md
 		read\linked-list-kth.md = read\linked-list-kth.md
@@ -78,6 +79,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "class13", "class13", "{0F6C
 		image\class13\test13.PNG = image\class13\test13.PNG
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "class16", "class16", "{FE471A7A-C221-4902-9032-AED2B29515C1}"
+	ProjectSection(SolutionItems) = preProject
+		image\class16\Class16.PNG = image\class16\Class16.PNG
+		image\class16\Data16.PNG = image\class16\Data16.PNG
+		image\class16\run16.PNG = image\class16\run16.PNG
+		image\class16\test16.PNG = image\class16\test16.PNG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +113,7 @@ Global
 		{AF3E357B-4ED5-4538-A461-A016569257DB} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
 		{7F07C91C-3315-4951-A38C-73D9A5D7020C} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
 		{0F6C0CA5-1141-4A67-A3B1-B8D61809ED21} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
+		{FE471A7A-C221-4902-9032-AED2B29515C1} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC7249AF-6D54-4A0B-BE9B-99A27B493FB2}
