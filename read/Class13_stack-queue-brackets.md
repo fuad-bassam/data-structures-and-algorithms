@@ -9,4 +9,4 @@ try to cover all cases in best time complexity
 ![img](../image/Class13/run13.PNG)
 ## TEST :notebook:
 
-![img](../image/Class13/test13.PNG)
+![img](/image/class13/test13.PNG)

@@ -1,6 +1,6 @@
 ﻿using ConsoleApp1.codeCha;
 using System;
-
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -21,8 +21,51 @@ namespace ConsoleApp1
             }
 
             Console.WriteLine("} \n");
+           
 
         }
+
+        #region Lab 14: stack-queue-brackets
+        public static string DDGgame(Queue<String> queue1, int key)
+        {
+            Queue<String> queue2 = new Queue<string>();
+            int count = 0; bool turn = true;
+
+
+            while (queue1.Count + queue2.Count != 1)
+            {
+                count = key;
+                while (count != 0)
+                {
+                    if (turn)
+                    {
+
+                        queue2.Enqueue(queue1.Dequeue());
+                        count--;
+                    }
+                    else
+                    {
+                        queue1.Enqueue(queue2.Dequeue());
+                        count--;
+                    }
+                    if (queue1.Count == 0 || queue2.Count == 0)
+                    { turn = !turn; }
+                }
+                if (turn)
+                { Console.WriteLine(queue2.Dequeue()); }
+                else
+                { Console.WriteLine(queue1.Dequeue()); }
+            } 
+                if (queue1.Peek() == null)
+                { return queue2.Peek(); }
+                else
+                { return queue1.Peek(); }
+
+            
+        } 
+
+        #endregion
+
 
         #region Class 13: stack-queue-brackets
 
@@ -209,6 +252,14 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
+
+
+
+
+
+
+
+
             #region Class 13: stack-queue-brackets
 
             //Console.WriteLine(validateBrackets("sds[]"));
@@ -226,10 +277,11 @@ namespace ConsoleApp1
             Cat cat2 = new Cat("cat2");
             Dog dog = new Dog("dog1");
             Cat cat5 = new Cat("cat5");
-    
 
 
-           
+
+
+
 
             animalShelter.enqueue(cat);
            
