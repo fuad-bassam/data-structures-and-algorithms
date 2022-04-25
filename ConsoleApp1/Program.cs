@@ -255,46 +255,66 @@ namespace ConsoleApp1
 
 
 
+            #region Class 17: 
 
+            #endregion
 
+            #region Class 16: tree-max
 
+            BinaryTree binaryTree = new BinaryTree();
+
+            // add element to tree like image in README file (Tree DATA)
+         
+            BinaryTNode node21 = new BinaryTNode(15, null, null);
+            BinaryTNode node12 = new BinaryTNode(5, null, null);
+            BinaryTNode node11 = new BinaryTNode(115, null, null);
+            BinaryTNode node2 = new BinaryTNode(10, node21, null);
+            BinaryTNode node1 = new BinaryTNode(30, node11, node12);
+            BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
+
+            binaryTree.root = rootNode;
+
+            Console.WriteLine("the max is " +binaryTree.findMaximum());
+            
+
+            #endregion
 
 
             #region Class 13: stack-queue-brackets
 
-            Console.WriteLine(validateBrackets("sds[]"));
-            Console.WriteLine(validateBrackets("{}(){}"));
-            Console.WriteLine(validateBrackets("()[[Extra Characters]]"));
-            Console.WriteLine(validateBrackets("{(})"));
+            //Console.WriteLine(validateBrackets("sds[]"));
+            //Console.WriteLine(validateBrackets("{}(){}"));
+            //Console.WriteLine(validateBrackets("()[[Extra Characters]]"));
+            //Console.WriteLine(validateBrackets("{(})"));
 
             #endregion
 
             #region Class 12: stack-queue-animal-shelter
 
-           // AnimalShelter animalShelter = new AnimalShelter();
-           // Console.WriteLine(animalShelter.dequeue("cat"));
-           // Cat cat = new Cat("cat1");
-           // Cat cat2 = new Cat("cat2");
-           // Dog dog = new Dog("dog1");
-           // Cat cat5 = new Cat("cat5");
-    
+            // AnimalShelter animalShelter = new AnimalShelter();
+            // Console.WriteLine(animalShelter.dequeue("cat"));
+            // Cat cat = new Cat("cat1");
+            // Cat cat2 = new Cat("cat2");
+            // Dog dog = new Dog("dog1");
+            // Cat cat5 = new Cat("cat5");
 
 
-           
 
-           // animalShelter.enqueue(cat);
-           
 
-           // animalShelter.enqueue(cat2);
-           // animalShelter.enqueue(dog);
-           // Console.WriteLine(animalShelter.dequeue("Lion"));
-           //animalShelter.enqueue(cat5);
 
-           
-           
-           // Console.WriteLine(animalShelter.dequeue("cat"));
-           // Console.WriteLine(animalShelter.dequeue("cat"));
-       
+            // animalShelter.enqueue(cat);
+
+
+            // animalShelter.enqueue(cat2);
+            // animalShelter.enqueue(dog);
+            // Console.WriteLine(animalShelter.dequeue("Lion"));
+            //animalShelter.enqueue(cat5);
+
+
+
+            // Console.WriteLine(animalShelter.dequeue("cat"));
+            // Console.WriteLine(animalShelter.dequeue("cat"));
+
             #endregion
 
             #region Class 11: stack-queue-pseudo
