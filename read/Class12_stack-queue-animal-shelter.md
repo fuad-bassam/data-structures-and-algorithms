@@ -2,7 +2,7 @@
 create Queue that take just cat and dog as animals object.
 
 ## Whiteboard Process  :notebook:
-![img](../image/class12/Class12_WB.PNG)
+![img](../image/class12/Class12_WB.png)
 
 ## Approach & Efficiency :envelope:
 using the Queue class methods and eidt it as the requerment to accepted Cat and Dog object just 
