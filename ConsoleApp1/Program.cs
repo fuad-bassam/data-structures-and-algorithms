@@ -285,35 +285,78 @@ namespace ConsoleApp1
     static void Main(string[] args)
         {
 
+            #region class 15 :trees
+            Console.WriteLine("Depth First as preOrder");
+            BinaryTree binaryTree = new BinaryTree();
+
+            ///// add element to tree like image in README file (Tree DATA)
+
+            BinaryTNode node21 = new BinaryTNode(15, null, null);
+            BinaryTNode node12 = new BinaryTNode(5, null, null);
+            BinaryTNode node11 = new BinaryTNode(115, null, null);
+            BinaryTNode node2 = new BinaryTNode(10, node21, null);
+            BinaryTNode node1 = new BinaryTNode(30, node11, node12);
+            BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
+
+            binaryTree.root = rootNode;
 
 
-            #region call Class 17: tree-breadth-first
-            //// add element to tree like image in README file(Tree DATA)
-
-            TreeNode node21 = new TreeNode(15);
-            TreeNode node12 = new TreeNode(5);
-            TreeNode node11 = new TreeNode(115);
-            TreeNode node2 = new TreeNode(10);
-            TreeNode node1 = new TreeNode(30);
-            TreeNode rootNode = new TreeNode(50);
-
-            rootNode.children.Add(node1);
-            rootNode.children.Add(node2);
-            node1.children.Add(node11);
-            node1.children.Add(node12);
-            node2.children.Add(node21);
-
-            List<int> listData = breadthFirst(rootNode);
-
-
-             Console.Write("[ ");
-
-            foreach (int item in listData)
+            foreach (var item in binaryTree.preOrder())
             {
                 Console.Write(item + " ");
             }
 
-            Console.WriteLine("]");
+            ///// BST
+            Console.WriteLine("\n\nBST CLASS test code");
+
+            BSTree bsTree = new BSTree();
+
+            BinaryTNode rootNode2 = new BinaryTNode(50, null, null);
+
+           // bsTree.addRoot(rootNode2);
+
+            bsTree.add(50);
+            bsTree.add(52);
+            bsTree.add(55);
+
+            bsTree.add(15);
+            bsTree.add(20);
+            bsTree.add(23);
+
+            bsTree.add(51);
+            bsTree.add(30);
+            bsTree.add(53);
+            Console.WriteLine("is there 30 in the BSTree = "+bsTree.contains(30));
+            Console.WriteLine("is there 59 in the BSTree = " + bsTree.contains(59));
+            #endregion
+
+            #region call Class 17: tree-breadth-first
+            //// add element to tree like image in README file(Tree DATA)
+
+            //TreeNode node21 = new TreeNode(15);
+            //TreeNode node12 = new TreeNode(5);
+            //TreeNode node11 = new TreeNode(115);
+            //TreeNode node2 = new TreeNode(10);
+            //TreeNode node1 = new TreeNode(30);
+            //TreeNode rootNode = new TreeNode(50);
+
+            //rootNode.children.Add(node1);
+            //rootNode.children.Add(node2);
+            //node1.children.Add(node11);
+            //node1.children.Add(node12);
+            //node2.children.Add(node21);
+
+            //List<int> listData = breadthFirst(rootNode);
+
+
+            // Console.Write("[ ");
+
+            //foreach (int item in listData)
+            //{
+            //    Console.Write(item + " ");
+            //}
+
+            //Console.WriteLine("]");
 
 
             #endregion
@@ -324,7 +367,7 @@ namespace ConsoleApp1
             //BinaryTree binaryTree = new BinaryTree();
 
             /////// add element to tree like image in README file (Tree DATA)
-         
+
             //BinaryTNode node21 = new BinaryTNode(15, null, null);
             //BinaryTNode node12 = new BinaryTNode(5, null, null);
             //BinaryTNode node11 = new BinaryTNode(115, null, null);
@@ -334,8 +377,8 @@ namespace ConsoleApp1
 
             //binaryTree.root = rootNode;
 
-            //Console.WriteLine("the max is " +binaryTree.findMaximum());
-            
+            //Console.WriteLine("the max is " + binaryTree.findMaximum());
+
 
             #endregion
 

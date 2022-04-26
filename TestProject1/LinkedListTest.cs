@@ -5,7 +5,7 @@ using ConsoleApp1;
 
 namespace TestProject1
 {
-    public class UnitTest1
+    public class LinkedListTest
     {
         
         
