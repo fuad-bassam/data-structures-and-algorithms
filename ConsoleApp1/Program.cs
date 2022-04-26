@@ -1,6 +1,7 @@
 ﻿using ConsoleApp1.codeCha;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
@@ -249,32 +250,91 @@ namespace ConsoleApp1
         }
         #endregion
 
-        static void Main(string[] args)
+        #region Class 17: tree-breadth-first
+        public static List<int> breadthFirst(TreeNode root)
+        {
+            Queue<TreeNode> brethQueue = new
+            Queue<TreeNode>();
+            List<int> brethList = new List<int>();
+
+            brethQueue.Enqueue(root);
+            while (brethQueue.Count() != 0)
+            {
+                TreeNode front = brethQueue.Dequeue();
+
+                brethList.Add(front.Value);
+
+                foreach (TreeNode node in front.children)
+                {
+                    brethQueue.Enqueue(node);
+                }
+
+
+                // in Binary tree
+
+                //if (front.Left != null)
+                //{ brethQueue.Enqueue(front.Left); }
+                //if (front.Right != null)
+                //{ brethQueue.Enqueue(front.Right); }
+            }
+            return brethList;
+        }
+    
+
+    #endregion
+    static void Main(string[] args)
         {
 
 
 
+            #region call Class 17: tree-breadth-first
+            //// add element to tree like image in README file(Tree DATA)
 
-            #region Class 17: 
+            TreeNode node21 = new TreeNode(15);
+            TreeNode node12 = new TreeNode(5);
+            TreeNode node11 = new TreeNode(115);
+            TreeNode node2 = new TreeNode(10);
+            TreeNode node1 = new TreeNode(30);
+            TreeNode rootNode = new TreeNode(50);
+
+            rootNode.children.Add(node1);
+            rootNode.children.Add(node2);
+            node1.children.Add(node11);
+            node1.children.Add(node12);
+            node2.children.Add(node21);
+
+            List<int> listData = breadthFirst(rootNode);
+
+
+             Console.Write("[ ");
+
+            foreach (int item in listData)
+            {
+                Console.Write(item + " ");
+            }
+
+            Console.WriteLine("]");
+
 
             #endregion
 
+
             #region Class 16: tree-max
 
-            BinaryTree binaryTree = new BinaryTree();
+            //BinaryTree binaryTree = new BinaryTree();
 
-            // add element to tree like image in README file (Tree DATA)
+            /////// add element to tree like image in README file (Tree DATA)
          
-            BinaryTNode node21 = new BinaryTNode(15, null, null);
-            BinaryTNode node12 = new BinaryTNode(5, null, null);
-            BinaryTNode node11 = new BinaryTNode(115, null, null);
-            BinaryTNode node2 = new BinaryTNode(10, node21, null);
-            BinaryTNode node1 = new BinaryTNode(30, node11, node12);
-            BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
+            //BinaryTNode node21 = new BinaryTNode(15, null, null);
+            //BinaryTNode node12 = new BinaryTNode(5, null, null);
+            //BinaryTNode node11 = new BinaryTNode(115, null, null);
+            //BinaryTNode node2 = new BinaryTNode(10, node21, null);
+            //BinaryTNode node1 = new BinaryTNode(30, node11, node12);
+            //BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
 
-            binaryTree.root = rootNode;
+            //binaryTree.root = rootNode;
 
-            Console.WriteLine("the max is " +binaryTree.findMaximum());
+            //Console.WriteLine("the max is " +binaryTree.findMaximum());
             
 
             #endregion

@@ -20,6 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "read", "read", "{E3B87B15-A
 		read\Class12_stack-queue-animal-shelter.md = read\Class12_stack-queue-animal-shelter.md
 		read\Class13_stack-queue-brackets.md = read\Class13_stack-queue-brackets.md
 		Class16_tree-max.md = Class16_tree-max.md
+		Class17_tree-breadth-first.md = Class17_tree-breadth-first.md
 		read\Class8_linked-list-zip.md = read\Class8_linked-list-zip.md
 		read\InsertToMiddleOfAnArray.md = read\InsertToMiddleOfAnArray.md
 		read\linked-list-kth.md = read\linked-list-kth.md
@@ -87,6 +88,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "class16", "class16", "{FE47
 		image\class16\test16.PNG = image\class16\test16.PNG
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "class17", "class17", "{4F21777C-CE8D-4931-96A1-8C77E08A59D2}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\class17.PNG = ..\..\..\Desktop\class17.PNG
+		..\..\..\Desktop\run17.PNG = ..\..\..\Desktop\run17.PNG
+		..\..\..\Desktop\test17.PNG = ..\..\..\Desktop\test17.PNG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +122,7 @@ Global
 		{7F07C91C-3315-4951-A38C-73D9A5D7020C} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
 		{0F6C0CA5-1141-4A67-A3B1-B8D61809ED21} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
 		{FE471A7A-C221-4902-9032-AED2B29515C1} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
+		{4F21777C-CE8D-4931-96A1-8C77E08A59D2} = {6A4EB30B-76F3-44F9-8046-9BBB8B69DB80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DC7249AF-6D54-4A0B-BE9B-99A27B493FB2}
