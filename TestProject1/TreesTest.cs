@@ -10,8 +10,201 @@ using Program = ConsoleApp1.Program;
 
 namespace TestProject1
 {
-    public class TreeTest
+    public class TreesTest
     {
+        #region call Class 15: trees
+
+        [Fact]
+        /// test if can create empty tree
+        public void Class15_CreateEmptyBTreeTest()
+        {
+            BinaryTree binaryTree = new BinaryTree();
+
+
+            Assert.Null(binaryTree.root);
+
+        }
+
+        [Fact]
+        /// test if can create empty tree
+        public void Class15_CreateEmptyBSTreeTest()
+        {
+            BSTree binarysearchTree = new BSTree();
+
+
+            Assert.Null(binarysearchTree.root);
+
+        }
+
+    
+
+        [Fact]
+        /// test if can create tree with root
+        public void Class15_CreateBSTreeWithRootTest()
+        {
+            BSTree bsTree = new BSTree();
+
+            bsTree.add(12);
+
+            Assert.Equal(12, bsTree.root.Value);
+            //Assert.True(bsTree.contains(12));
+        }
+
+        [Fact]
+        /// test if can data fit correctly in the right of BStree 
+        public void Class15_CreateBSTreeWithDataRightTest2()
+        {
+            BSTree bsTree = new BSTree();
+
+            bsTree.add(12);
+
+            bsTree.add(6);
+
+            bsTree.add(15);
+
+            Assert.Equal(15, bsTree.root.Right.Value);
+        
+        }
+
+
+        [Fact]
+        /// test if can data fit correctly in the lift of BStree 
+        public void Class15_CreateBSTreeWithDataLiftTest2()
+        {
+            BSTree bsTree = new BSTree();
+
+            bsTree.add(12);
+
+            bsTree.add(6);
+
+            bsTree.add(15);
+
+            Assert.Equal(6, bsTree.root.Left.Value);
+         
+        }
+
+
+        [Fact]
+        /// test if can return the correct Depth First Pre Order
+        public void Class15_DepthFirstPreOrderTest1()
+        {
+            string result = null;
+            BinaryTree binaryTree = new BinaryTree();
+
+            BinaryTNode node21 = new BinaryTNode(21, null, null);
+            BinaryTNode node12 = new BinaryTNode(12, null, null);
+            BinaryTNode node11 = new BinaryTNode(11, null, null);
+            BinaryTNode node2 = new BinaryTNode(2, node21, null);
+            BinaryTNode node1 = new BinaryTNode(1, node11, node12);
+            BinaryTNode rootNode = new BinaryTNode(0, node1, node2);
+
+            binaryTree.root = rootNode;
+
+            foreach (var item in binaryTree.preOrder())
+            {
+                result = result + item.ToString() + " ";
+            }
+
+            Assert.Equal("0 1 11 12 2 21 ", result);
+        }
+
+
+        [Fact]
+        /// test if can return the correct Depth First inOrder
+        public void Class15_DepthFirstinOrderTest()
+        {
+            string result = null;
+            BinaryTree binaryTree = new BinaryTree();
+
+            BinaryTNode node21 = new BinaryTNode(21, null, null);
+            BinaryTNode node12 = new BinaryTNode(12, null, null);
+            BinaryTNode node11 = new BinaryTNode(11, null, null);
+            BinaryTNode node2 = new BinaryTNode(2, node21, null);
+            BinaryTNode node1 = new BinaryTNode(1, node11, node12);
+            BinaryTNode rootNode = new BinaryTNode(0, node1, node2);
+
+            binaryTree.root = rootNode;
+
+            foreach (var item in binaryTree.inOrder())
+            {
+                result +=item+ " ";
+            }
+
+            Assert.Equal("11 1 12 0 21 2 ", result);
+        }
+        [Fact]
+        /// test if can return the correct Depth First postOrder
+        public void Class15_DepthFirstPostOrderTest1()
+        {
+            string result = null;
+            BinaryTree binaryTree = new BinaryTree();
+
+            BinaryTNode node21 = new BinaryTNode(21, null, null);
+            BinaryTNode node12 = new BinaryTNode(12, null, null);
+            BinaryTNode node11 = new BinaryTNode(11, null, null);
+            BinaryTNode node2 = new BinaryTNode(2, node21, null);
+            BinaryTNode node1 = new BinaryTNode(1, node11, node12);
+            BinaryTNode rootNode = new BinaryTNode(0, node1, node2);
+
+            binaryTree.root = rootNode;
+
+            foreach (var item in binaryTree.postOrder())
+            {
+                result += item + " ";
+            }
+
+            Assert.Equal("11 12 1 21 2 0 ", result);
+        }
+
+        [Fact]
+        /// test if can method contains BStree 
+        public void Class15_CreateBSTreeContainsMethodTest1()
+        {
+            BSTree bsTree = new BSTree();
+
+            bsTree.add(12);
+
+            bsTree.add(6);
+
+            bsTree.add(15);
+
+            bsTree.add(11);
+
+            bsTree.add(14);
+
+            bsTree.add(29);
+
+
+            Assert.True( bsTree.contains(12));
+
+        }
+        [Fact]
+        /// test if can method contains BStree 
+        public void Class15_CreateBSTreeContainsMethodTest2()
+        {
+            BSTree bsTree = new BSTree();
+
+            bsTree.add(12);
+
+            bsTree.add(6);
+
+            bsTree.add(15);
+
+            bsTree.add(11);
+
+            bsTree.add(14);
+
+            bsTree.add(29);
+
+
+            Assert.True( ! bsTree.contains(30));
+
+        }
+
+
+
+
+        #endregion
         #region call Class 17: tree-breadth-first
 
         [Fact]
