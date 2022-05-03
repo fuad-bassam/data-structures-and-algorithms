@@ -8,7 +8,7 @@ namespace ConsoleApp1
 
     public class Program
     {
-        
+
 
         public static void arrayIntElementToConsole(int[] arr)
         {
@@ -22,9 +22,11 @@ namespace ConsoleApp1
             }
 
             Console.WriteLine("} \n");
-           
+
 
         }
+
+
 
         #region Lab 14: stack-queue-brackets
         public static string DDGgame(Queue<String> queue1, int key)
@@ -56,14 +58,14 @@ namespace ConsoleApp1
                 { Console.WriteLine(queue2.Dequeue()); }
                 else
                 { Console.WriteLine(queue1.Dequeue()); }
-            } 
-                if (queue1.Peek() == null)
-                { return queue2.Peek(); }
-                else
-                { return queue1.Peek(); }
+            }
+            if (queue1.Peek() == null)
+            { return queue2.Peek(); }
+            else
+            { return queue1.Peek(); }
 
-            
-        } 
+
+        }
 
         #endregion
 
@@ -85,10 +87,10 @@ namespace ConsoleApp1
                     if (item == ']')
                     {
                         x = "[";
-                    }else if (item == ')')
+                    } else if (item == ')')
                     {
                         x = "(";
-                    }else  
+                    } else
                     {
                         x = "{";
                     }
@@ -124,8 +126,8 @@ namespace ConsoleApp1
                 linkl.insert("6");
                 linkl.insert("4");
                 linkl.appendElement("12");
-                linkl.insertAfter("13","6");
-                linkl.insertBefore("15","4");
+                linkl.insertAfter("13", "6");
+                linkl.insertBefore("15", "4");
                 Console.Write(linkl.toString());
                 Console.WriteLine($"is there {4} " + linkl.indicates("4"));
             }
@@ -134,7 +136,7 @@ namespace ConsoleApp1
 
                 Console.WriteLine(e.Message);
             }
-          
+
         }
         #endregion
 
@@ -145,16 +147,16 @@ namespace ConsoleApp1
             try
             {
                 LinkedList linkl = new LinkedList();
-                
+
                 linkl.appendElement("12");
                 linkl.appendElement("11");
                 linkl.appendElement("10");
                 linkl.appendElement("9");
                 linkl.appendElement("8");
                 linkl.insertAfter("13", "16");
-              //  linkl.insertBefore(15, 12);
+                //  linkl.insertBefore(15, 12);
                 Console.Write(linkl.toString());
-        
+
             }
             catch (Exception e)
             {
@@ -182,8 +184,8 @@ namespace ConsoleApp1
 
 
                 //  Console.Write(linkl.toString());
-                Console.WriteLine("the value is "+ linkl.kthFromEnd(3));
-                Console.WriteLine("the value is "+linkl.kthFromEnd(0));
+                Console.WriteLine("the value is " + linkl.kthFromEnd(3));
+                Console.WriteLine("the value is " + linkl.kthFromEnd(0));
 
             }
             catch (Exception e)
@@ -199,10 +201,10 @@ namespace ConsoleApp1
 
         //call-Challenge8-linked-list-zip
 
-        public static LinkedList zipList( LinkedList list1, LinkedList list2)
+        public static LinkedList zipList(LinkedList list1, LinkedList list2)
         {
-            LinkedList list3 =  list1.deepcopy();
-            LinkedList list4 =(LinkedList) list2.deepcopy();
+            LinkedList list3 = list1.deepcopy();
+            LinkedList list4 = (LinkedList)list2.deepcopy();
             Node pointer = list3.FirstNode;
             Node selectNode;
 
@@ -214,18 +216,18 @@ namespace ConsoleApp1
 
             while (pointer != null)
             {
-                if (  list4.FirstNode != null)
+                if (list4.FirstNode != null)
                 {
                     selectNode = list4.FirstNode;
 
-               
-                     list4.FirstNode = list4.FirstNode.next;
+
+                    list4.FirstNode = list4.FirstNode.next;
 
 
                     selectNode.next = pointer.next;
                     pointer.next = selectNode;
 
-                    if ( pointer.next.next == null && list4.FirstNode != null)
+                    if (pointer.next.next == null && list4.FirstNode != null)
                     {
                         pointer.next.next = list4.FirstNode;
                         return list3;
@@ -243,7 +245,7 @@ namespace ConsoleApp1
             }
 
 
-            
+
 
 
             return list3;
@@ -279,17 +281,70 @@ namespace ConsoleApp1
             }
             return brethList;
         }
-    
 
-    #endregion
+
+        #endregion
+
+        #region class 18: tree-fizz-buzz
+
+
+        public static void fizzBuzzTree(BinaryTNode root, string testNode, K_aryTNode x)
+        {
+            string val;
+            if (root.Value % 5 == 0 && root.Value % 3 == 0)
+                val = "fizzBuzz";
+            else if (root.Value % 5 == 0)
+                val = "Buzz";
+            else if (root.Value % 3 == 0)
+                val = "fizz";
+            else
+                val = root.Value.ToString();
+            K_aryTNode newTNode = new K_aryTNode(val);
+
+            if (testNode == "null")
+            {
+
+                x = newTNode;
+            }
+            else if (testNode == "Left") {
+            x = newTNode;
+               }
+            else if (testNode == "Right")
+            { 
+            x = newTNode;
+            }
+                x = newTNode;
+
+
+            if (root.Left != null)
+            {
+                fizzBuzzTree(root.Left, "Left", x.Left); }
+            if (root.Right != null)
+            {
+                fizzBuzzTree(root.Right, "Right", x.Right); }
+        }
+        public static K_aryTree callFizzBuzzTree(BinaryTree k_aryTree)
+        {
+          K_aryTree newK_aryTree = new K_aryTree();
+
+           // K_aryTNode xs = newK_aryTree.root;
+             fizzBuzzTree(k_aryTree.root, "null", newK_aryTree.root);
+           // newK_aryTree.root = xs;
+            return newK_aryTree;
+        }
+
+         
+         #endregion
     static void Main(string[] args)
         {
 
-            #region class 15 :trees
+
+
+            #region class 18: tree-fizz-buzz
+
             Console.WriteLine("Depth First as preOrder");
             BinaryTree binaryTree = new BinaryTree();
 
-            ///// add element to tree like image in README file (Tree DATA)
 
             BinaryTNode node21 = new BinaryTNode(15, null, null);
             BinaryTNode node12 = new BinaryTNode(5, null, null);
@@ -299,35 +354,67 @@ namespace ConsoleApp1
             BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
 
             binaryTree.root = rootNode;
+            
 
 
-            foreach (var item in binaryTree.preOrder())
-            {
-                Console.Write(item + " ");
-            }
+           K_aryTree k_ary = callFizzBuzzTree(binaryTree);
 
-            ///// BST
-            Console.WriteLine("\n\nBST CLASS test code");
+            Console.Write(k_ary.root.Left.Value + " ");
+            
 
-            BSTree bsTree = new BSTree();
+            //foreach (var item in K_ary)
+            //{
+            //    Console.Write(item + " ");
+            //}
 
-            BinaryTNode rootNode2 = new BinaryTNode(50, null, null);
 
-           // bsTree.addRoot(rootNode2);
 
-            bsTree.add(50);
-            bsTree.add(52);
-            bsTree.add(55);
+            #endregion
 
-            bsTree.add(15);
-            bsTree.add(20);
-            bsTree.add(23);
 
-            bsTree.add(51);
-            bsTree.add(30);
-            bsTree.add(53);
-            Console.WriteLine("is there 30 in the BSTree = "+bsTree.contains(30));
-            Console.WriteLine("is there 59 in the BSTree = " + bsTree.contains(59));
+            #region class 15 :trees
+            // Console.WriteLine("Depth First as preOrder");
+            // BinaryTree binaryTree = new BinaryTree();
+
+            // ///// add element to tree like image in README file (Tree DATA)
+
+            // BinaryTNode node21 = new BinaryTNode(15, null, null);
+            // BinaryTNode node12 = new BinaryTNode(5, null, null);
+            // BinaryTNode node11 = new BinaryTNode(115, null, null);
+            // BinaryTNode node2 = new BinaryTNode(10, node21, null);
+            // BinaryTNode node1 = new BinaryTNode(30, node11, node12);
+            // BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
+
+            // binaryTree.root = rootNode;
+
+
+            // foreach (var item in binaryTree.preOrder())
+            // {
+            //     Console.Write(item + " ");
+            // }
+
+            // ///// BST
+            // Console.WriteLine("\n\nBST CLASS test code");
+
+            // BSTree bsTree = new BSTree();
+
+            // BinaryTNode rootNode2 = new BinaryTNode(50, null, null);
+
+            //// bsTree.addRoot(rootNode2);
+
+            // bsTree.add(50);
+            // bsTree.add(52);
+            // bsTree.add(55);
+
+            // bsTree.add(15);
+            // bsTree.add(20);
+            // bsTree.add(23);
+
+            // bsTree.add(51);
+            // bsTree.add(30);
+            // bsTree.add(53);
+            // Console.WriteLine("is there 30 in the BSTree = "+bsTree.contains(30));
+            // Console.WriteLine("is there 59 in the BSTree = " + bsTree.contains(59));
             #endregion
 
             #region call Class 17: tree-breadth-first
