@@ -8,8 +8,13 @@ is divide by 5 and 3 return "Fizz"
 ## Approach & Efficiency
 try to use the previos class to reduse code 
 
-time complexity : full project O(n)
+time complexity : full project O(n*k)
 
 space complexity : full project O(n)
 ## Solution
 
+![img](../image/class18/run.PNG)
+
+## test 
+
+![img](../image/class18/test_18.PNG)

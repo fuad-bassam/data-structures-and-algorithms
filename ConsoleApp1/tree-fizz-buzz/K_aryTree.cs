@@ -10,10 +10,19 @@ namespace ConsoleApp1
     {
         public K_aryTNode root { get; set; }
 
+        public K_aryTree()
+        {
+
+        }
+        public K_aryTree(string value)
+        {
+            this.root.Value = value;
+        }
 
 
 
-     
-}
+
+   
+    }
 
 } 
