@@ -287,49 +287,63 @@ namespace ConsoleApp1
 
         #region class 18: tree-fizz-buzz
 
-
-        public static void fizzBuzzTree(BinaryTNode root, string testNode, K_aryTNode x)
+        public static string BuzzTreeCheck(K_aryTNode node)
         {
             string val;
-            if (root.Value % 5 == 0 && root.Value % 3 == 0)
+            int nodeInt = Int32.Parse(node.Value);
+            if (nodeInt % 5 == 0 && nodeInt % 3 == 0)
                 val = "fizzBuzz";
-            else if (root.Value % 5 == 0)
+            else if (nodeInt % 5 == 0)
                 val = "Buzz";
-            else if (root.Value % 3 == 0)
+            else if (nodeInt % 3 == 0)
                 val = "fizz";
             else
-                val = root.Value.ToString();
-            K_aryTNode newTNode = new K_aryTNode(val);
+                val = node.Value.ToString();
 
-            if (testNode == "null")
-            {
-
-                x = newTNode;
-            }
-            else if (testNode == "Left") {
-            x = newTNode;
-               }
-            else if (testNode == "Right")
-            { 
-            x = newTNode;
-            }
-                x = newTNode;
-
-
-            if (root.Left != null)
-            {
-                fizzBuzzTree(root.Left, "Left", x.Left); }
-            if (root.Right != null)
-            {
-                fizzBuzzTree(root.Right, "Right", x.Right); }
+            return val;
         }
-        public static K_aryTree callFizzBuzzTree(BinaryTree k_aryTree)
+        public static void fizzBuzzTree(K_aryTNode root, K_aryTNode newtreeRoot)
+        {
+
+
+            Queue<K_aryTNode> brethQueue = new Queue<K_aryTNode>();
+
+            brethQueue.Enqueue(root);
+            while (brethQueue.Count() != 0)
+            {
+                K_aryTNode front = brethQueue.Dequeue();
+                string val = BuzzTreeCheck(front);
+                front.Value = val;
+             
+
+                newtreeRoot.addChildren(front);
+
+           
+
+                foreach (K_aryTNode node in front.Children)
+                {
+                    brethQueue.Enqueue(node);
+                }
+
+            }
+      
+        }
+        public static K_aryTree callFizzBuzzTree(K_aryTree k_aryTree)
         {
           K_aryTree newK_aryTree = new K_aryTree();
 
-           // K_aryTNode xs = newK_aryTree.root;
-             fizzBuzzTree(k_aryTree.root, "null", newK_aryTree.root);
-           // newK_aryTree.root = xs;
+            if (k_aryTree.root == null)
+            {
+                return null;
+            }
+
+            string val = BuzzTreeCheck(k_aryTree.root);
+            K_aryTNode root = new K_aryTNode(val);
+            newK_aryTree.root = root;
+            
+
+            fizzBuzzTree(k_aryTree.root, newK_aryTree.root);
+        
             return newK_aryTree;
         }
 
@@ -342,30 +356,40 @@ namespace ConsoleApp1
 
             #region class 18: tree-fizz-buzz
 
-            Console.WriteLine("Depth First as preOrder");
-            BinaryTree binaryTree = new BinaryTree();
+            Console.WriteLine("tree fizz buzz brethQueue ");
+            K_aryTree k_aryTree = new K_aryTree();
+
+            K_aryTNode rootNode = new K_aryTNode("50");
+            K_aryTNode node1 = new K_aryTNode("30");
+            K_aryTNode node2 = new K_aryTNode("10");
+            K_aryTNode node11 = new K_aryTNode("115");
+            K_aryTNode node12 = new K_aryTNode("5");
+            K_aryTNode node13 = new K_aryTNode("16");
+            K_aryTNode node21 = new K_aryTNode("12");
+            K_aryTNode node22 = new K_aryTNode("49");
 
 
-            BinaryTNode node21 = new BinaryTNode(15, null, null);
-            BinaryTNode node12 = new BinaryTNode(5, null, null);
-            BinaryTNode node11 = new BinaryTNode(115, null, null);
-            BinaryTNode node2 = new BinaryTNode(10, node21, null);
-            BinaryTNode node1 = new BinaryTNode(30, node11, node12);
-            BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
+            rootNode.addChildren(node1);
+            rootNode.addChildren(node2);
+            node1.addChildren(node11);
+            node1.addChildren(node12);
+            node1.addChildren(node13);
+            node2.addChildren(node21);
+            node2.addChildren(node22);
 
-            binaryTree.root = rootNode;
+            k_aryTree.root = rootNode;
             
 
 
-           K_aryTree k_ary = callFizzBuzzTree(binaryTree);
+           K_aryTree k_ary = callFizzBuzzTree(k_aryTree);
 
-            Console.Write(k_ary.root.Left.Value + " ");
-            
+          //  Console.Write(k_ary.root.Value + " ");
 
-            //foreach (var item in K_ary)
-            //{
-            //    Console.Write(item + " ");
-            //}
+
+            foreach (K_aryTNode item in k_ary.root.Children)
+            {
+                Console.WriteLine(item.Value + " ");
+            }
 
 
 

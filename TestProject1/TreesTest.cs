@@ -12,6 +12,122 @@ namespace TestProject1
 {
     public class TreesTest
     {
+
+
+        #region class 18: tree-fizz-buzz
+
+
+
+        [Fact]
+        public void Class18_CreatetreefizzbuzzTest()
+        {
+            
+            K_aryTree k_aryTree = new K_aryTree();
+
+            K_aryTNode rootNode = new K_aryTNode("50");
+            K_aryTNode node1 = new K_aryTNode("30");
+            K_aryTNode node2 = new K_aryTNode("10");
+            K_aryTNode node11 = new K_aryTNode("115");
+            K_aryTNode node12 = new K_aryTNode("5");
+            K_aryTNode node13 = new K_aryTNode("16");
+            K_aryTNode node21 = new K_aryTNode("12");
+            K_aryTNode node22 = new K_aryTNode("49");
+
+
+            rootNode.addChildren(node1);
+            rootNode.addChildren(node2);
+            node1.addChildren(node11);
+            node1.addChildren(node12);
+            node1.addChildren(node13);
+            node2.addChildren(node21);
+            node2.addChildren(node22);
+
+            k_aryTree.root = rootNode;
+
+
+
+            K_aryTree k_ary = Program.callFizzBuzzTree(k_aryTree);
+
+            Console.Write(k_ary.root.Value + " ");
+            string result="";
+
+            foreach (K_aryTNode item in k_ary.root.Children)
+            {
+                result+= item.Value + " ";
+            }
+
+
+            Assert.Equal("Buzz fizzBuzz Buzz Buzz Buzz 16 fizz 49 ", result);
+
+        }
+        [Fact]
+        public void Class18_CreateEmptytreefizzbuzzTest()
+        {
+         
+            K_aryTree k_aryTree = new K_aryTree();
+
+    
+
+            K_aryTree k_ary = Program.callFizzBuzzTree(k_aryTree);
+
+           
+
+
+            Assert.Null(k_ary);
+
+        }
+
+
+        [Fact]
+        public void Class18_CreatetreefizzbuzzTest2()
+        {
+            
+            K_aryTree k_aryTree = new K_aryTree();
+
+            K_aryTNode rootNode = new K_aryTNode("12");
+            K_aryTNode node1 = new K_aryTNode("18");
+            K_aryTNode node2 = new K_aryTNode("15");
+            K_aryTNode node11 = new K_aryTNode("56");
+            K_aryTNode node12 = new K_aryTNode("0");
+            K_aryTNode node13 = new K_aryTNode("6");
+            K_aryTNode node21 = new K_aryTNode("16");
+            K_aryTNode node22 = new K_aryTNode("33");
+
+
+            rootNode.addChildren(node1);
+            rootNode.addChildren(node2);
+            node1.addChildren(node11);
+            node1.addChildren(node12);
+            node1.addChildren(node13);
+            node2.addChildren(node21);
+            node2.addChildren(node22);
+
+            k_aryTree.root = rootNode;
+
+
+
+            K_aryTree k_ary = Program.callFizzBuzzTree(k_aryTree);
+
+            Console.Write(k_ary.root.Value + " ");
+            string result = "";
+
+            foreach (K_aryTNode item in k_ary.root.Children)
+            {
+                result += item.Value + " ";
+            }
+
+
+            Assert.Equal("fizz fizz fizzBuzz 56 fizzBuzz fizz 16 fizz ", result);
+
+        }
+
+
+
+        #endregion
+
+
+
+
         #region call Class 15: trees
 
         [Fact]

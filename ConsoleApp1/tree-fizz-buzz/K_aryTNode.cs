@@ -11,21 +11,20 @@ namespace ConsoleApp1
         public string Value { get; set; }
 
         
-        public K_aryTNode Right { get; set; }
-        public K_aryTNode Left { get; set; }
+        public List<K_aryTNode> Children = new List<K_aryTNode>();
 
-        public K_aryTNode(string value , K_aryTNode left , K_aryTNode right)
+        public K_aryTNode()
         {
-            this.Value = value;
-            this.Left = left;
-            this.Right = right;
-          
+
         }
         public K_aryTNode(string value)
         {
             this.Value = value;
-           
         }
-       
+
+        public void addChildren(K_aryTNode child) {
+
+            Children.Add(child);
+        }
     }
 }
