@@ -12,6 +12,9 @@ create function that return list of values as `breadth first`.
 ## Approach & Efficiency
 ues best complexity for `breadth first` and make the method work in the tree that is not just binary.
 
+Complexity:
+ time complexity : O(n)   
+ space complexity :O(W) => O(n)
 ## Solution
 
 
