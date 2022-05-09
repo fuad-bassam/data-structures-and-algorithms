@@ -14,7 +14,7 @@ in this project you will find some algorithims and codes for many Topics i hope 
 6  |Class6|[Linked List insertions (Update Class5)](./read/LinkedListinsertions.md)
 7  |Class7|[Linked List kth ](./read/linked-list-kth.md)
 8  |Class8|[Linked List zip ](./read/Class8_linked-list-zip.md)
-10  |Class10|[StackAndQueue](./read/Class10_StackAndQueue.md)
+10 |Class10|[StackAndQueue](./read/Class10_StackAndQueue.md)
 11 |Class11|[pseudoQueue using Stack](./read/Class11_stack-and-queue.md)
 12 |Class12|[queue animal shelter](./read/Class12_stack-queue-animal-shelter.md)
 13 |Class13|[stack test brackets](./read/Class13_stack-queue-brackets.md)
