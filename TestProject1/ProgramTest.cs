@@ -7,6 +7,63 @@ namespace TestProject1
 {
     public class ProgramTest
     {
+        /// class26: InsertionSort
+
+        [Fact]
+        /// test it in happy case 1
+        public void Class26_test1()
+        {
+
+            int[] arr = { 2, 4, 3, 6, 1, 5 };
+
+            int[] arr2 = Program.InsertionSort(arr);
+            int[] test = { 1, 2, 3, 4, 5, 6 };
+            Assert.Equal(test,arr2);
+        }
+        [Fact]
+        /// test it in happy case 2
+        public void Class26_test2()
+        {
+
+            int[] arr = { 2, 4, 3,-1, 6, 1,3, 5 };
+
+            int[] arr2 = Program.InsertionSort(arr);
+            int[] test = {-1, 1, 2, 3,3, 4, 5, 6 };
+            Assert.Equal(test, arr2);
+        }
+        [Fact]
+        /// test it in happy case 3
+        public void Class26_test3()
+        {
+
+            int[] arr = { 2, 2, 2, 2, 2, 2, 2, 2 };
+
+            int[] arr2 = Program.InsertionSort(arr);
+            int[] test = { 2, 2, 2, 2, 2, 2, 2, 2 };
+            Assert.Equal(test, arr2);
+        }
+        [Fact]
+        /// test it in happy case 4
+        public void Class26_test4()
+        {
+
+            int[] arr = { -2, 50, -30, 1, 14, 1, 35, -14 };
+
+            int[] arr2 = Program.InsertionSort(arr);
+            int[] test = { -30, -14, -2, 1, 1, 14, 35, 50 };
+            Assert.Equal(test, arr2);
+        }
+        [Fact]
+        /// test it in happy case 1
+        public void Class26_ifNullarr()
+        {
+
+            int[] arr = new int[5];
+
+            int[] arr2 = Program.InsertionSort(arr);
+            int[] test = { 0, 0, 0, 0, 0 };
+            Assert.Equal(test, arr2);
+        }
 
 
         ///Class 13: stack-queue-brackets
