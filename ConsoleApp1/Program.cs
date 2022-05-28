@@ -314,11 +314,11 @@ namespace ConsoleApp1
                 K_aryTNode front = brethQueue.Dequeue();
                 string val = BuzzTreeCheck(front);
                 front.Value = val;
-             
+
 
                 newtreeRoot.addChildren(front);
 
-           
+
 
                 foreach (K_aryTNode node in front.Children)
                 {
@@ -326,11 +326,11 @@ namespace ConsoleApp1
                 }
 
             }
-      
+
         }
         public static K_aryTree callFizzBuzzTree(K_aryTree k_aryTree)
         {
-          K_aryTree newK_aryTree = new K_aryTree();
+            K_aryTree newK_aryTree = new K_aryTree();
 
             if (k_aryTree.root == null)
             {
@@ -340,10 +340,10 @@ namespace ConsoleApp1
             string val = BuzzTreeCheck(k_aryTree.root);
             K_aryTNode root = new K_aryTNode(val);
             newK_aryTree.root = root;
-            
+
 
             fizzBuzzTree(k_aryTree.root, newK_aryTree.root);
-        
+
             return newK_aryTree;
         }
 
@@ -370,19 +370,99 @@ namespace ConsoleApp1
 
         }
         #endregion
+
+
+
+        #region class27: Merge Sort
+
+
+        public static int[] MergeSort(int[] arr)
+        { int n = arr.Length;
+
+            if (n > 1)
+            {
+                int mid = n / 2;
+                int[] left = arr.Take(mid).ToArray();
+                int[] right = arr.Skip(mid).ToArray();
+
+                MergeSort(left);
+
+                MergeSort(right);
+
+                int[] arr2 = Merge(left, right, arr);
+                return arr2;
+            }
+            else {
+                return arr;
+            }
+        }
+
+        public static int[] Merge(int[] left, int[] right, int[] arr) {
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while (i < left.Length && j < right.Length)
+            { if (left[i] <= right[j])
+                { arr[k] = left[i];
+                    i += 1; }
+                else
+                { arr[k] = right[j];
+                    j += 1; }
+
+                k += 1;
+            }
+
+
+            while (i < left.Length)
+            {
+                arr[k] = left[i];
+                k++;
+                i++;
+            }
+            while (j < right.Length)
+            {
+                arr[k] = right[j];
+                k++;
+                j++;
+            }
+            return arr;
+        }
+
+
+
+    #endregion
+
         static void Main(string[] args)
         {
 
-            #region class26: InsertionSort
 
-            int[] arr = { 1, 6, 30, 4,50,13 };
 
-             int[] arr2 = InsertionSort(arr);
+            #region class27: Merge Sort
+
+
+            int[] arr = { 1, 6, 30, 4, 50, 13 ,7};
+
+            int[] arr2 = MergeSort(arr);
 
             foreach (int item in arr2)
             {
-                Console.Write(item+"   "   );
+                Console.Write(item + "   ");
             }
+
+            #endregion
+
+
+            #region class26: InsertionSort
+
+            //int[] arr = { 1, 6, 30, 4,50,13 };
+
+            // int[] arr2 = InsertionSort(arr);
+
+            //foreach (int item in arr2)
+            //{
+            //    Console.Write(item+"   "   );
+            //}
 
             #endregion
 
