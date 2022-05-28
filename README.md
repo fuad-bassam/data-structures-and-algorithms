@@ -25,6 +25,7 @@ in this project you will find some algorithims and codes for many Topics i hope 
 18 |Class18|[tree breadth first](./read/Class18_tree-fizz-buzz.md)
 19 |Class19|**Mock Interviews**
 20 |Class26|[Insertion Sort](./read/BLOG.md)
+21 |Class27|[Merge Sort](./read/sorting/merge/README.md)
 
 
 
