@@ -431,24 +431,75 @@ namespace ConsoleApp1
 
 
 
-    #endregion
+        #endregion
 
+
+
+
+
+        #region class28: Quick Sort
+
+
+        public static void QuickSort(int[] arr, int left, int right) {
+            if (left < right) {
+                int position = Partition(arr, left, right);
+                QuickSort(arr, left, position - 1);
+                QuickSort(arr, position + 1, right);
+               } }
+
+        public static int Partition(int[] arr,int left,int right) {
+            int pivot = arr[right];
+            int low = left - 1;
+            for (int i =left; i < right;i++ ) {
+                if (arr[i] <= pivot) 
+                {
+                    low++;
+                    Swap(arr, i, low);
+                }  
+            }
+            Swap(arr, right, low + 1);
+            return low + 1;
+        }
+
+public static void Swap(int[] arr,int i,int low) {
+            int temp;
+            temp = arr[i];
+
+
+            arr[i] =arr[low];
+
+
+            arr[low] = temp;
+        }
+
+            #endregion
         static void Main(string[] args)
         {
 
+            #region class28: Quick Sort
 
+            int[] arr = { 1, 6, 30, 4, 50, 13, 7 };
+
+            QuickSort(arr,0,arr.Length-1);
+
+            foreach (int item in arr)
+            {
+                Console.Write(item + "   ");
+            }
+
+            #endregion
 
             #region class27: Merge Sort
 
 
-            int[] arr = { 1, 6, 30, 4, 50, 13 ,7};
+            //int[] arr = { 1, 6, 30, 4, 50, 13 ,7};
 
-            int[] arr2 = MergeSort(arr);
+            //int[] arr2 = MergeSort(arr);
 
-            foreach (int item in arr2)
-            {
-                Console.Write(item + "   ");
-            }
+            //foreach (int item in arr2)
+            //{
+            //    Console.Write(item + "   ");
+            //}
 
             #endregion
 

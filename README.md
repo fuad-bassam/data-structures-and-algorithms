@@ -26,6 +26,8 @@ in this project you will find some algorithims and codes for many Topics i hope 
 19 |Class19|**Mock Interviews**
 20 |Class26|[Insertion Sort](./read/BLOG.md)
 21 |Class27|[Merge Sort](./read/sorting/merge/README.md)
+22 |Class28|[Quick Sort](./read/sorting/quick/README.md)
+
 
 
 
