@@ -8,7 +8,80 @@ namespace TestProject1
     public class ProgramTest
     {
 
-        /// class26: Merge Sort
+        /// class28: Quick Sort
+
+        [Fact]
+        /// test it in happy case 1
+        public void Class28_test1()
+        {
+
+            int[] arr = { 2, 4, 3, 6, 1, 5 };
+
+            Program.QuickSort(arr, 0, arr.Length - 1);
+            int[] test = { 1, 2, 3, 4, 5, 6 };
+            Assert.Equal(test, arr);
+        }
+        [Fact]
+        /// test it in happy case 2
+        public void Class28_test2()
+        {
+
+            int[] arr = { 2, 4, 3, -1, 6, 1, 3, 5 };
+
+            Program.QuickSort(arr, 0, arr.Length - 1);
+            int[] test = { -1, 1, 2, 3, 3, 4, 5, 6 };
+            Assert.Equal(test, arr);
+        }
+        [Fact]
+        /// test it in happy case 3
+        public void Class28_test3()
+        {
+
+            int[] arr = { 2, 2, 2, 2, 2, 2, 2, 2 };
+
+            Program.QuickSort(arr, 0, arr.Length - 1);
+            int[] test = { 2, 2, 2, 2, 2, 2, 2, 2 };
+            Assert.Equal(test, arr);
+        }
+        [Fact]
+        /// test it in happy case 4
+        public void Class28_test4()
+        {
+
+            int[] arr = { -2, 50, -30, 1, 14, 1, 35, -14 };
+
+            Program.QuickSort(arr, 0, arr.Length - 1);
+            int[] test = { -30, -14, -2, 1, 1, 14, 35, 50 };
+            Assert.Equal(test, arr);
+        }
+        [Fact]
+        /// test if the array is empty
+        public void Class28_ifNullarr()
+        {
+
+            int[] arr = { };
+
+            Program.QuickSort(arr, 0, arr.Length - 1);
+            int[] test = { };
+            Assert.Equal(test, arr);
+        }
+        [Fact]
+        /// test have one value
+        public void Class28_OneValue()
+        {
+
+            int[] arr = { 1 };
+
+            Program.QuickSort(arr,0,arr.Length-1);
+            int[] test = { 1 };
+            Assert.Equal(test, arr);
+        }
+
+
+
+
+
+        /// class27: Merge Sort
 
         [Fact]
         /// test it in happy case 1
