@@ -2,12 +2,85 @@
 
 using Xunit;
 using ConsoleApp1;
+using CodeChallenge.CodeChallenge.Hash;
 
 namespace TestProject1
 {
     public class ProgramTest
     {
 
+        /// class30: HashTable
+        [Fact]
+        /// test  Setting a key/value to your hashtable results in the value being in the data structure
+        public void Class30_test1()
+        {
+
+            HashTable hashTable = new HashTable();
+
+            hashTable.set("s", 15);
+            hashTable.set("ss", 25);
+            Assert.Equal(15,hashTable.arrayvalue[   hashTable.hash("s", hashTable.arrayvalue.Length)  ]);
+        }
+        [Fact]
+        /// test Retrieving based on a key returns the value stored
+        public void Class30_test2()
+        {
+
+            HashTable hashTable = new HashTable();
+
+            hashTable.set("s", 15);
+            hashTable.set("ss", 25);
+            Assert.Equal(15, hashTable.get("s"));
+        }
+        [Fact]
+        /// test  Successfully returns null for a key that does not exist in the hashtable
+         public void Class30_test3()
+        {
+
+            HashTable hashTable = new HashTable();
+
+            hashTable.set("s", 15);
+            hashTable.set("ss", 25);
+            hashTable.set("as", 55);
+            Assert.True(!hashTable.contains("fuad")); }
+   
+      
+        [Fact]
+        /// test  Successfully handle a collision within the hashtable
+        public void Class30_test4()
+        {
+
+            HashTable hashTable = new HashTable();
+
+            hashTable.set("var", 15);
+            hashTable.set("var", 25);
+            Assert.Equal(25, hashTable.get("var"));
+        }
+        [Fact]
+        /// test  Successfully retrieve a value from a bucket within the hashtable that has a collision
+        public void Class30_test5()
+        {
+
+            HashTable hashTable = new HashTable();
+
+            hashTable.set("ss", 15);
+            hashTable.set("ss", 25);
+            hashTable.set("as", 55);
+            hashTable.set("af", 35);
+            hashTable.set("am", 53);
+            hashTable.set("al", 62);
+
+            Assert.Equal(25, hashTable.get("ss"));
+        }
+        [Fact]
+        /// test  Successfully hash a key to an in-range value
+        public void Class30_test6()
+        {
+
+            HashTable hashTable = new HashTable();
+
+            Assert.True(hashTable.arrayvalue.Length > hashTable.hash("varadd" , hashTable.arrayvalue.Length));
+        }
         /// class28: Quick Sort
 
         [Fact]
