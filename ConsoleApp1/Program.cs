@@ -1,4 +1,5 @@
-﻿using ConsoleApp1.codeCha;
+﻿using CodeChallenge.CodeChallenge.Hash;
+using ConsoleApp1.codeCha;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -476,16 +477,28 @@ public static void Swap(int[] arr,int i,int low) {
         static void Main(string[] args)
         {
 
+            #region class30: HashTable
+
+            HashTable hashTable = new HashTable();
+
+            hashTable.set("s" ,15);
+            hashTable.set("ss", 25);
+            hashTable.set("as", 55);
+            Console.WriteLine("the value for ss is = "+hashTable.get("ss"));
+            
+
+
+            #endregion
             #region class28: Quick Sort
 
-            int[] arr = { 1, 6, 30, 4, 50, 13, 7 };
+            //int[] arr = { 1, 6, 30, 4, 50, 13, 7 };
 
-            QuickSort(arr,0,arr.Length-1);
+            //QuickSort(arr,0,arr.Length-1);
 
-            foreach (int item in arr)
-            {
-                Console.Write(item + "   ");
-            }
+            //foreach (int item in arr)
+            //{
+            //    Console.Write(item + "   ");
+            //}
 
             #endregion
 
