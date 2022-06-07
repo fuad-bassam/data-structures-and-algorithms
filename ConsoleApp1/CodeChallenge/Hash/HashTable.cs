@@ -10,24 +10,25 @@ namespace CodeChallenge.CodeChallenge.Hash
     {
 
         // List<string , int> 
-        //KeyValuePair<string, int>[] dataList = new KeyValuePair<string, int>[200];
+       // KeyValuePair<string, int>[] dataList = new KeyValuePair<string, int>[200];
        // string[] arrayKey = new string[200];
        public int[] arrayvalue= new int[200];
         public void set(string key , int value) {
 
-          int hashedKey=   hash(key, arrayvalue.Length);
+          int hashedKey =  hash(key);
 
             arrayvalue[hashedKey] = value;
             Console.WriteLine($"the data value {value} has set in place { hashedKey}");
             
         }
 
-        public int hash(string key, int lestLenght)
+        public int hash(string key)
         {
+            int lestLenght = arrayvalue.Length;
             int num = 0;
             //string[] keyData= key.Split("");
             byte[] keyData = Encoding.ASCII.GetBytes(key);
-
+            
             foreach (char item in keyData)
             {
                 num += item;
@@ -37,7 +38,7 @@ namespace CodeChallenge.CodeChallenge.Hash
 
         public int get(string key)
         {
-            int hashedKey = hash(key, arrayvalue.Length);
+            int hashedKey = hash(key);
 
             if (contains(key))
             {
@@ -52,7 +53,7 @@ namespace CodeChallenge.CodeChallenge.Hash
 
         public bool contains(string key)
         {
-            int hashedKey = hash(key, arrayvalue.Length);
+            int hashedKey = hash(key);
             if (arrayvalue[hashedKey] != 0)
             {
                 return true;
