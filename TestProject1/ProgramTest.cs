@@ -19,7 +19,7 @@ namespace TestProject1
 
             hashTable.set("s", 15);
             hashTable.set("ss", 25);
-            Assert.Equal(15,hashTable.arrayvalue[   hashTable.hash("s", hashTable.arrayvalue.Length)  ]);
+            Assert.Equal(15,hashTable.arrayvalue[   hashTable.hash("s")  ]);
         }
         [Fact]
         /// test Retrieving based on a key returns the value stored
@@ -79,7 +79,7 @@ namespace TestProject1
 
             HashTable hashTable = new HashTable();
 
-            Assert.True(hashTable.arrayvalue.Length > hashTable.hash("varadd" , hashTable.arrayvalue.Length));
+            Assert.True(hashTable.arrayvalue.Length > hashTable.hash("varadd" ));
         }
         /// class28: Quick Sort
 
