@@ -484,9 +484,13 @@ public static void Swap(int[] arr,int i,int low) {
             hashTable.set("s" ,15);
             hashTable.set("ss", 25);
             hashTable.set("as", 55);
-            Console.WriteLine("the value for ss is = "+hashTable.get("ss"));
+            Console.WriteLine("the value for ss is = "+hashTable.get("sss"));
+            //if (hashTable.contains("sda"))
+            //{
+            //    Console.WriteLine("the data is "+ hashTable.get("sds"));
+            //}
+            //else { Console.WriteLine("no data"); }
             
-
 
             #endregion
             #region class28: Quick Sort
