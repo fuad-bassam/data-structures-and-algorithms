@@ -11,13 +11,15 @@ namespace CodeChallenge.CodeChallenge.Hash
 
         // List<string , int> 
        // KeyValuePair<string, int>[] dataList = new KeyValuePair<string, int>[200];
-       // string[] arrayKey = new string[200];
-       public int[] arrayvalue= new int[200];
+       public string[] arrayKey = new string[200];
+       public int?[] arrayvalue= new int?[200];
         public void set(string key , int value) {
 
-          int hashedKey =  hash(key);
+          int hashedKey = hash(key);
 
+            // add the value and solve the collisions by replace the value
             arrayvalue[hashedKey] = value;
+            arrayKey[hashedKey] = key;
             Console.WriteLine($"the data value {value} has set in place { hashedKey}");
             
         }
@@ -36,7 +38,7 @@ namespace CodeChallenge.CodeChallenge.Hash
             return (num % lestLenght);
         }
 
-        public int get(string key)
+        public int? get(string key)
         {
             int hashedKey = hash(key);
 
@@ -46,7 +48,7 @@ namespace CodeChallenge.CodeChallenge.Hash
                 // return $" the value = {arrayvalue[hashedKey]}";
             }
             else
-                return 0;
+                return null;
              //   return $" the value is null= {arrayvalue[hashedKey]}";
 
         }
@@ -54,13 +56,29 @@ namespace CodeChallenge.CodeChallenge.Hash
         public bool contains(string key)
         {
             int hashedKey = hash(key);
-            if (arrayvalue[hashedKey] != 0)
+            if (arrayvalue[hashedKey] != null)
             {
                 return true;
             }
             return false;
         }
 
+        public List<string> keys()
+        {
+            
+
+            List <string> listKeys = new List<string>();
+            for (int i=0; i<arrayKey.Length;i++)
+            {
+                if (arrayKey[i] != null)
+                {
+                    listKeys.Add(arrayKey[i]);
+
+                }
+            }
+
+            return listKeys;
+        }
 
     }
 }

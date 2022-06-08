@@ -3,6 +3,7 @@
 using Xunit;
 using ConsoleApp1;
 using CodeChallenge.CodeChallenge.Hash;
+using System.Collections.Generic;
 
 namespace TestProject1
 {
@@ -80,6 +81,21 @@ namespace TestProject1
             HashTable hashTable = new HashTable();
 
             Assert.True(hashTable.arrayvalue.Length > hashTable.hash("varadd" ));
+        }
+
+        [Fact]
+        /// test  Successfully returns a list of all unique keys that exist in the hashtable
+
+        public void Class30_test7()
+        {
+
+            HashTable hashTable = new HashTable();
+            hashTable.set("vas", 25);
+            hashTable.set("ome", 35);
+            hashTable.set("kar", 45);
+            List<string> list1 = new List<string>() { "kar", "ome", "vas"};
+           //{ "vas","ome","kar" }
+            Assert.Equal(list1, hashTable.keys());
         }
         /// class28: Quick Sort
 
