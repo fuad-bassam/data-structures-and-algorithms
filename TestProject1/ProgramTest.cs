@@ -10,6 +10,58 @@ namespace TestProject1
     public class ProgramTest
     {
 
+
+        ////class31 :hashmap-repeated-word
+        [Fact]
+        /// test  repeated word 1
+        public void Class31_test1()
+        {
+             string paragraph = "Once upon a time, there was a brave princess who...";
+
+
+
+            Assert.Equal("a",Program. repeatedWord(paragraph));
+        }
+        [Fact]
+        /// test  repeated word 2
+        public void Class31_test2()
+        {
+            string paragraph = " it was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...";
+
+
+
+            Assert.Equal("it", Program.repeatedWord(paragraph));
+        }
+        [Fact]
+        /// test  repeated word 3
+        public void Class31_test3()
+        {
+            string paragraph = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+
+
+
+            Assert.Equal("summer", Program.repeatedWord(paragraph));
+        }
+        [Fact]
+        /// test  if paragraph is empty 
+        public void Class31_test4()
+        {
+            string paragraph="";
+
+
+            Assert.Null(Program.repeatedWord(paragraph));
+        }
+        [Fact]
+        /// test  if paragraph have one word 
+        public void Class31_test5()
+        {
+            string paragraph = "Hello";
+
+
+
+            Assert.Null( Program.repeatedWord(paragraph));
+        }
+
         /// class30: HashTable
         [Fact]
         /// test  Setting a key/value to your hashtable results in the value being in the data structure
