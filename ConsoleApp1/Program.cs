@@ -473,24 +473,51 @@ public static void Swap(int[] arr,int i,int low) {
             arr[low] = temp;
         }
 
-            #endregion
+        #endregion
+
+
+        #region class31 :hashmap-repeated-word
+
+        public static string repeatedWord(string string1)
+        {
+          String string2= string1.Replace(",","").ToLower();
+            string[] listWord = string2.Split(' ');
+
+            for (int i = 0; i < listWord.Length; i++)
+            {
+                for (int j = i ; j > 0; j--)
+                {
+                    if (listWord[i+1] == listWord[j])
+                    { return listWord[i+1]; }
+                }
+            }
+            return null;
+        }
+        #endregion
         static void Main(string[] args)
         {
+            #region class31 :hashmap-repeated-word
 
+           //  string paragraph = "Once upon a time, there was a brave princess who...";
+
+            string paragraph = "It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+            Console.WriteLine(repeatedWord(paragraph));
+
+            #endregion
             #region class30: HashTable
 
-            HashTable hashTable = new HashTable();
+            //HashTable hashTable = new HashTable();
 
-            hashTable.set("s" ,15);
-            hashTable.set("ss", 25);
-            hashTable.set("as", 55);
-            Console.WriteLine("the value for ss is = "+hashTable.get("sss"));
-            //if (hashTable.contains("sda"))
-            //{
-            //    Console.WriteLine("the data is "+ hashTable.get("sds"));
-            //}
-            //else { Console.WriteLine("no data"); }
-            
+            //hashTable.set("s" ,15);
+            //hashTable.set("ss", 25);
+            //hashTable.set("as", 55);
+            //Console.WriteLine("the value for ss is = "+hashTable.get("sss"));
+            ////if (hashTable.contains("sda"))
+            ////{
+            ////    Console.WriteLine("the data is "+ hashTable.get("sds"));
+            ////}
+            ////else { Console.WriteLine("no data"); }
+
 
             #endregion
             #region class28: Quick Sort
