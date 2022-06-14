@@ -483,9 +483,9 @@ public static void Swap(int[] arr,int i,int low) {
           String string2= string1.Replace(",","").ToLower();
             string[] listWord = string2.Split(' ');
 
-            for (int i = 0; i < listWord.Length; i++)
+            for (int i = 0; i < listWord.Length && listWord.Length>1; i++)
             {
-                for (int j = i ; j > 0; j--)
+                for (int j = i ; j >= 0; j--)
                 {
                     if (listWord[i+1] == listWord[j])
                     { return listWord[i+1]; }
