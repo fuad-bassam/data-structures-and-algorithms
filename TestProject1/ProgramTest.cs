@@ -4,11 +4,86 @@ using Xunit;
 using ConsoleApp1;
 using CodeChallenge.CodeChallenge.Hash;
 using System.Collections.Generic;
+using static ConsoleApp1.Program;
 
 namespace TestProject1
 {
     public class ProgramTest
     {
+
+        ////class33 :hashmap leftJoin
+        public List<HashTable> demoHashTableData() {
+
+
+            HashTable hashTable1 = new HashTable();
+            hashTable1.set("first", 1);
+            hashTable1.set("second", 2);
+            hashTable1.set("third", 3);
+            hashTable1.set("the 6th", 6);
+            HashTable hashTable2 = new HashTable();
+            hashTable2.set("first", 1);
+            hashTable2.set("second", 2);
+            hashTable2.set("third", 3);
+            hashTable2.set("the forth", 4);
+
+            List<HashTable> hashTables = new List<HashTable>();
+
+            hashTables.Add(hashTable1);
+            hashTables.Add(hashTable2);
+
+            return hashTables;
+        }
+        [Fact]
+        /// test  return all data 
+        public void Class33_test1()
+        {
+            List<HashTable> hashData = demoHashTableData();
+            
+            var listData =Program.hashmapLeftJoin(hashData[0], hashData[1]);
+            string stringAllData = null;
+
+            foreach (var item in listData)
+            {
+                stringAllData += $"{item.key}{item.table1Data}{item.table2Data}|";
+            }
+            Assert.Equal("the 6th6|second22|third33|first11|the forth4|", stringAllData);
+        }
+        [Fact]
+        /// test  return row data 
+        public void Class33_test2()
+        {
+
+            List<HashTable> hashData = demoHashTableData();
+            var listData = Program.hashmapLeftJoin(hashData[0], hashData[1]);
+
+            HashJoinTable rowDate = listData.Find(x => x.key == "third");
+            Assert.Equal("third33", $"{rowDate.key }{rowDate.table1Data }{rowDate.table2Data}");
+
+        }
+        [Fact]
+        /// test  return null data  
+        public void Class33_test3()
+        {
+
+            List<HashTable> hashData = demoHashTableData();
+            var listData = Program.hashmapLeftJoin(hashData[0], hashData[1]);
+
+            HashJoinTable rowDate = listData.Find(x => x.key == "the forth");
+            Assert.Null(rowDate.table2Data);
+        }
+
+        [Fact]
+        /// test  return null data 
+        public void Class33_test4()
+        {
+
+            List<HashTable> hashData = demoHashTableData();
+            var listData = Program.hashmapLeftJoin(hashData[0], hashData[1]);
+
+            HashJoinTable rowDate = listData.Find(x => x.key == "the 6th");
+            Assert.Equal("the 6th6", $"{rowDate.key }{rowDate.table1Data }{rowDate.table2Data}");
+
+        }
 
 
         ////class31 :hashmap-repeated-word

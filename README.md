@@ -30,6 +30,9 @@ in this project you will find some algorithims and codes for many Topics i hope 
 23 |Class29|**Mock Interviews**
 24 |Class30|[Hash Table](./read/HashTables.md)
 25 |Class31|[repeated word](./read/hashmap-repeated-word.md)
+26 |Class32|[]()
+27 |Class33|[hashmap left join](./read/hashmap-left-join.md)
+
 
 
 

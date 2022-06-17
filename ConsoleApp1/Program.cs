@@ -446,28 +446,28 @@ namespace ConsoleApp1
                 int position = Partition(arr, left, right);
                 QuickSort(arr, left, position - 1);
                 QuickSort(arr, position + 1, right);
-               } }
+            } }
 
-        public static int Partition(int[] arr,int left,int right) {
+        public static int Partition(int[] arr, int left, int right) {
             int pivot = arr[right];
             int low = left - 1;
-            for (int i =left; i < right;i++ ) {
-                if (arr[i] <= pivot) 
+            for (int i = left; i < right; i++) {
+                if (arr[i] <= pivot)
                 {
                     low++;
                     Swap(arr, i, low);
-                }  
+                }
             }
             Swap(arr, right, low + 1);
             return low + 1;
         }
 
-public static void Swap(int[] arr,int i,int low) {
+        public static void Swap(int[] arr, int i, int low) {
             int temp;
             temp = arr[i];
 
 
-            arr[i] =arr[low];
+            arr[i] = arr[low];
 
 
             arr[low] = temp;
@@ -480,28 +480,115 @@ public static void Swap(int[] arr,int i,int low) {
 
         public static string repeatedWord(string string1)
         {
-          String string2= string1.Replace(",","").ToLower();
+            String string2 = string1.Replace(",", "").ToLower();
             string[] listWord = string2.Split(' ');
 
-            for (int i = 0; i < listWord.Length && listWord.Length>1; i++)
+            for (int i = 0; i < listWord.Length && listWord.Length > 1; i++)
             {
-                for (int j = i ; j >= 0; j--)
+                for (int j = i; j >= 0; j--)
                 {
-                    if (listWord[i+1] == listWord[j])
-                    { return listWord[i+1]; }
+                    if (listWord[i + 1] == listWord[j])
+                    { return listWord[i + 1]; }
                 }
             }
             return null;
         }
         #endregion
+
+
+        #region class33 :hashmap leftJoin
+
+        public class HashJoinTable
+        {
+            public string key { get; set; }
+            public int? table1Data { get; set; }
+            public int? table2Data { get; set; }
+
+            //public HashJoinTable(string key, int? table1Data, int? table2Data)
+            //{
+            //    this.key = key;
+            //    this.table1Data = table1Data;
+            //    this.table2Data = table2Data;
+            //}
+        }
+        public static List<HashJoinTable> addhashTableData(HashTable table , HashTable table2)
+        {
+            List<HashJoinTable> newTable = new List<HashJoinTable>();
+
+            foreach (string item in table.arrayKey)
+            {
+                if (item == null)
+                {
+                    continue;
+                }
+
+                int indexHash = table.hash(item);
+
+                newTable.Add(new HashJoinTable { key = item, table1Data = table.arrayvalue[indexHash], table2Data = table2.arrayvalue[indexHash] });
+
+                table2.arrayKey[indexHash] = null;
+                //  newJoinTable.Add(new HashJoinTable { item, table1.arrayvalue[indexHash], table2.arrayvalue[indexHash] });
+
+            }
+
+            return newTable;
+
+        }
+
+        public static List<HashJoinTable> hashmapLeftJoin(HashTable table1 , HashTable table2)
+        {
+
+            List<HashJoinTable> newHashJoinTable = new List<HashJoinTable>();
+
+
+            newHashJoinTable.AddRange( addhashTableData(table1, table2));
+
+            newHashJoinTable.AddRange(addhashTableData(table2, table1));
+
+
+            return newHashJoinTable;
+        }
+        #endregion
         static void Main(string[] args)
         {
+
+
+            #region class33 :hashmap leftJoin
+            HashTable hashTable1 = new HashTable ();
+            hashTable1.set("first",1 );
+            hashTable1.set("second", 2);
+            hashTable1.set("therd", 3);
+            hashTable1.set("the 6th", 6);
+            HashTable hashTable2 = new HashTable ();
+            hashTable2.set("first", 1);
+            hashTable2.set("second", 2);
+            hashTable2.set("therd", 3);
+            hashTable2.set("the forth", 4);
+
+            var listData=   hashmapLeftJoin(hashTable1 ,hashTable2);
+
+            Console.WriteLine("\n the");  
+
+            foreach (HashJoinTable item in listData)
+            {
+
+
+                Console.WriteLine(item.key + ": " + item.table1Data +", " + item.table2Data );
+
+                //Console.WriteLine(item.key +": "+ 
+                //    item.table1Data != null? item.table1Data : "null" +
+                //    ", " + item.table2Data != null ? item.table2Data : "null");
+
+            }
+            #endregion
+
+
             #region class31 :hashmap-repeated-word
 
-           //  string paragraph = "Once upon a time, there was a brave princess who...";
+            //  string paragraph = "Once upon a time, there was a brave princess who...";
 
-            string paragraph = "It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
-            Console.WriteLine(repeatedWord(paragraph));
+            //  string paragraph = "It was a queer, sultry summer , the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+            //Console.WriteLine(repeatedWord(paragraph));
 
             #endregion
             #region class30: HashTable
