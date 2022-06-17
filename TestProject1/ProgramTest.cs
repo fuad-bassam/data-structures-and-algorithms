@@ -11,6 +11,69 @@ namespace TestProject1
     public class ProgramTest
     {
 
+
+
+        //class32 :tree_intersection
+
+        [Fact]
+        /// test  return all data 
+        public void Class32_test1()
+        {
+            List<BinaryTree> TreeData = Program.demoTreeData();
+
+
+            List<int> resultList = tree_intersection(TreeData[0], TreeData[1]);
+            string stringAllData = null;
+
+            foreach (int item in resultList)
+            {
+                stringAllData += $"{item}|";
+            }
+            Assert.Equal("50|115|5|", stringAllData);
+        }
+
+        [Fact]
+        /// test  null data 
+        public void Class32_test2()
+        {
+            List<BinaryTree> TreeData = Program.demoTreeData();
+
+
+            List<int> resultList = tree_intersection(TreeData[0], null);
+            
+            Assert.Null(resultList);
+        }
+
+        [Fact]
+        /// test  null data 
+        public void Class32_test3()
+        {
+            List<BinaryTree> TreeData = Program.demoTreeData();
+
+            BinaryTree emptyList = new BinaryTree();
+
+            List<int> resultList = tree_intersection(TreeData[0], emptyList);
+
+            
+            Assert.Null(resultList);
+        }
+
+        [Fact]
+        /// test  row data 
+        public void Class32_test4()
+        {
+            List<BinaryTree> TreeData = Program.demoTreeData();
+
+
+            List<int> resultList = tree_intersection(TreeData[0], TreeData[1]);
+            string stringAllData = null;
+
+            
+            Assert.Contains(5, resultList);
+        }
+
+
+
         ////class33 :hashmap leftJoin
         public List<HashTable> demoHashTableData() {
 

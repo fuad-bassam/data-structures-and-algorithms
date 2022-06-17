@@ -70,7 +70,6 @@ namespace ConsoleApp1
 
         #endregion
 
-
         #region Class 13: stack-queue-brackets
 
         public static bool validateBrackets(string str)
@@ -351,7 +350,6 @@ namespace ConsoleApp1
 
         #endregion
 
-
         #region class26: InsertionSort
         public static int[] InsertionSort(int[] arr)
         {
@@ -371,8 +369,6 @@ namespace ConsoleApp1
 
         }
         #endregion
-
-
 
         #region class27: Merge Sort
 
@@ -434,10 +430,6 @@ namespace ConsoleApp1
 
         #endregion
 
-
-
-
-
         #region class28: Quick Sort
 
 
@@ -475,7 +467,6 @@ namespace ConsoleApp1
 
         #endregion
 
-
         #region class31 :hashmap-repeated-word
 
         public static string repeatedWord(string string1)
@@ -494,7 +485,6 @@ namespace ConsoleApp1
             return null;
         }
         #endregion
-
 
         #region class33 :hashmap leftJoin
 
@@ -549,40 +539,126 @@ namespace ConsoleApp1
             return newHashJoinTable;
         }
         #endregion
+        #region class32 :tree-intersection
+
+        //DATA From class 15
+
+        public static List<BinaryTree> demoTreeData() {
+
+            BinaryTree tree1 = new BinaryTree();
+
+            BinaryTNode node21 = new BinaryTNode(15, null, null);
+            BinaryTNode node12 = new BinaryTNode(5, null, null);
+            BinaryTNode node11 = new BinaryTNode(115, null, null);
+            BinaryTNode node2 = new BinaryTNode(15, node21, null);
+            BinaryTNode node1 = new BinaryTNode(24, node11, node12);
+            BinaryTNode rootNode = new BinaryTNode(50, node1, node2);
+
+            tree1.root = rootNode;
+
+            BinaryTree tree2 = new BinaryTree();
+
+            BinaryTNode tree2Node21 = new BinaryTNode(1, null, null);
+            BinaryTNode tree2Node12 = new BinaryTNode(5, null, null);
+            BinaryTNode tree2Node11 = new BinaryTNode(115, null, null);
+            BinaryTNode tree2Node2 = new BinaryTNode(13, tree2Node21, null);
+            BinaryTNode tree2Node1 = new BinaryTNode(25, tree2Node11, tree2Node12);
+            BinaryTNode tree2rootNode = new BinaryTNode(50, tree2Node1, tree2Node2);
+
+            tree2.root = tree2rootNode;
+
+
+
+            List<BinaryTree> ListTrees = new List<BinaryTree>();
+            ListTrees.Add(tree1);
+            ListTrees.Add(tree2);
+
+            return ListTrees;
+        }
+
+
+
+        public static List<int> tree_intersection(BinaryTree tree1 , BinaryTree tree2) {
+
+            if (tree1 == null || tree2 == null || tree1.root == null || tree2.root == null)
+            {
+                return null;
+            }
+
+            HashTable hashTable1 = new HashTable();
+            List<int> listData = new List<int>();
+
+              Array treeArray1 = tree1.preOrder();
+
+            foreach (int item in treeArray1)
+            {
+                hashTable1.set(item.ToString(),item);
+            }
+
+            Array treeArray2 = tree2.preOrder();
+
+            foreach (int item in treeArray2)
+            {
+                if (hashTable1.get(item.ToString()) !=null)
+                {
+                    listData.Add(item);
+                }
+                
+            }
+
+
+            return listData;
+        }
+        #endregion
+
         static void Main(string[] args)
         {
 
 
-            #region class33 :hashmap leftJoin
-            HashTable hashTable1 = new HashTable ();
-            hashTable1.set("first",1 );
-            hashTable1.set("second", 2);
-            hashTable1.set("therd", 3);
-            hashTable1.set("the 6th", 6);
-            HashTable hashTable2 = new HashTable ();
-            hashTable2.set("first", 1);
-            hashTable2.set("second", 2);
-            hashTable2.set("therd", 3);
-            hashTable2.set("the forth", 4);
+            #region class32 :tree-intersection
 
-            var listData=   hashmapLeftJoin(hashTable1 ,hashTable2);
 
-            Console.WriteLine("\n the");  
+            List<BinaryTree> demoData = demoTreeData();
 
-            foreach (HashJoinTable item in listData)
+
+            List<int> resultList = tree_intersection(demoData[0], demoData[1]);
+            Console.Write($"\nThe result = ");
+
+            foreach (int item in resultList)
             {
-
-
-                Console.WriteLine(item.key + ": " + item.table1Data +", " + item.table2Data );
-
-                //Console.WriteLine(item.key +": "+ 
-                //    item.table1Data != null? item.table1Data : "null" +
-                //    ", " + item.table2Data != null ? item.table2Data : "null");
-
-            }
+                Console.Write($"{item}|");
+            } ;
             #endregion
 
 
+            #region class33 :hashmap leftJoin
+            //HashTable hashTable1 = new HashTable ();
+            //hashTable1.set("first",1 );
+            //hashTable1.set("second", 2);
+            //hashTable1.set("therd", 3);
+            //hashTable1.set("the 6th", 6);
+            //HashTable hashTable2 = new HashTable ();
+            //hashTable2.set("first", 1);
+            //hashTable2.set("second", 2);
+            //hashTable2.set("therd", 3);
+            //hashTable2.set("the forth", 4);
+
+            //var listData=   hashmapLeftJoin(hashTable1 ,hashTable2);
+
+            //Console.WriteLine("\n the");  
+
+            //foreach (HashJoinTable item in listData)
+            //{
+
+
+            //    Console.WriteLine(item.key + ": " + item.table1Data +", " + item.table2Data );
+
+            //    //Console.WriteLine(item.key +": "+ 
+            //    //    item.table1Data != null? item.table1Data : "null" +
+            //    //    ", " + item.table2Data != null ? item.table2Data : "null");
+
+            //}
+            #endregion
             #region class31 :hashmap-repeated-word
 
             //  string paragraph = "Once upon a time, there was a brave princess who...";
@@ -619,7 +695,6 @@ namespace ConsoleApp1
             //}
 
             #endregion
-
             #region class27: Merge Sort
 
 
@@ -633,8 +708,6 @@ namespace ConsoleApp1
             //}
 
             #endregion
-
-
             #region class26: InsertionSort
 
             //int[] arr = { 1, 6, 30, 4,50,13 };
@@ -647,7 +720,6 @@ namespace ConsoleApp1
             //}
 
             #endregion
-
             #region class 18: tree-fizz-buzz
 
             //  Console.WriteLine("tree fizz buzz brethQueue ");
@@ -688,8 +760,6 @@ namespace ConsoleApp1
 
 
             #endregion
-
-
             #region class 15 :trees
             // Console.WriteLine("Depth First as preOrder");
             // BinaryTree binaryTree = new BinaryTree();
@@ -734,7 +804,6 @@ namespace ConsoleApp1
             // Console.WriteLine("is there 30 in the BSTree = "+bsTree.contains(30));
             // Console.WriteLine("is there 59 in the BSTree = " + bsTree.contains(59));
             #endregion
-
             #region call Class 17: tree-breadth-first
             //// add element to tree like image in README file(Tree DATA)
 
@@ -765,8 +834,6 @@ namespace ConsoleApp1
 
 
             #endregion
-
-
             #region Class 16: tree-max
 
             //BinaryTree binaryTree = new BinaryTree();
@@ -786,8 +853,6 @@ namespace ConsoleApp1
 
 
             #endregion
-
-
             #region Class 13: stack-queue-brackets
 
             //Console.WriteLine(validateBrackets("sds[]"));
@@ -796,7 +861,6 @@ namespace ConsoleApp1
             //Console.WriteLine(validateBrackets("{(})"));
 
             #endregion
-
             #region Class 12: stack-queue-animal-shelter
 
             // AnimalShelter animalShelter = new AnimalShelter();
@@ -824,7 +888,6 @@ namespace ConsoleApp1
             // Console.WriteLine(animalShelter.dequeue("cat"));
 
             #endregion
-
             #region Class 11: stack-queue-pseudo
             /////////////Class 11: stack-queue-pseudo
 
@@ -865,7 +928,6 @@ namespace ConsoleApp1
             //Console.WriteLine("aaa "+pseudoqueue.peek());
             /////////////////////////////////////
             #endregion
-
             #region Class 10: Stack And Queue
             /////////////Class 10: Stack And Queue
 
@@ -902,7 +964,6 @@ namespace ConsoleApp1
             //Console.WriteLine(queue.dequeue());
             /////////////////////////////////////
             #endregion
-
             #region Class8 methods  linked-list-zip
             ///////////Class8 methods  linked-list-zip
             //Console.WriteLine("List 1");
@@ -929,7 +990,6 @@ namespace ConsoleApp1
 
             /////////////////////////
             #endregion
-
             #region Class7 methods kthFromEndList
 
             ////////Class7 methods kthFromEndList
@@ -938,7 +998,6 @@ namespace ConsoleApp1
 
             //////////////////////////
             #endregion
-
             #region linked-list-insertions
             ////////// linked-list-insertions
 
@@ -949,7 +1008,6 @@ namespace ConsoleApp1
             ////////////////////
 
             #endregion
-
             #region linked-list Challenge
 
             /////////linked-list Challenge
@@ -967,7 +1025,6 @@ namespace ConsoleApp1
 
             ////////////////
             #endregion
-
             #region array-insert-shift challenge
             /////////////// array-insert-shift challenge
             //int[] arrinsertShift = { 1, 2, 3, 4 };
@@ -995,7 +1052,6 @@ namespace ConsoleApp1
 
             /////////////////////////////////////////
             #endregion
-
             #region array-binary-search challenge
             ////////array-binary-search challenge
 
