@@ -1,4 +1,5 @@
-﻿using CodeChallenge.CodeChallenge.Hash;
+﻿using CodeChallenge.CodeChallenge.Graphs;
+using CodeChallenge.CodeChallenge.Hash;
 using ConsoleApp1.codeCha;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,9 @@ namespace ConsoleApp1
 
         public static void arrayIntElementToConsole(int[] arr)
         {
+
+
+
 
             Console.Write("The Result :- { ");
 
@@ -199,8 +203,9 @@ namespace ConsoleApp1
 
         #region call-linked-list-zip
 
-        //call-Challenge8-linked-list-zip
-
+        //call-Challenge8-linked-list-zip 
+         
+         
         public static LinkedList zipList(LinkedList list1, LinkedList list2)
         {
             LinkedList list3 = list1.deepcopy();
@@ -615,19 +620,47 @@ namespace ConsoleApp1
         {
 
 
+
+            #region class35 :Graphs
+
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("5");
+            GraphNode node2 = graphs.add("10");
+            GraphNode node3 = graphs.add("15");
+            GraphNode node4 = graphs.add("20");
+            graphs.addEdge(node1, node2, 5);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 8);
+
+            Console.WriteLine("The Graph have {");
+            int countGraphNode = 0;
+
+            foreach (GraphNode node in graphs.getNodes())
+            {
+
+                Console.WriteLine($"node {++countGraphNode} with value {node.value}");
+                
+            }
+            Console.WriteLine("}");
+
+            #endregion
+
+
             #region class32 :tree-intersection
 
 
-            List<BinaryTree> demoData = demoTreeData();
+            //List<BinaryTree> demoData = demoTreeData();
 
 
-            List<int> resultList = tree_intersection(demoData[0], demoData[1]);
-            Console.Write($"\nThe result = ");
+            //List<int> resultList = tree_intersection(demoData[0], demoData[1]);
+            //Console.Write($"\nThe result = ");
 
-            foreach (int item in resultList)
-            {
-                Console.Write($"{item}|");
-            } ;
+            //foreach (int item in resultList)
+            //{
+            //    Console.Write($"{item}|");
+            //} ;
             #endregion
 
 

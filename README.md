@@ -32,6 +32,10 @@ in this project you will find some algorithims and codes for many Topics i hope 
 25 |Class31|[repeated word](./read/hashmap-repeated-word.md)
 26 |Class32|[tree intersection](./read/tree_intersection.md)
 27 |Class33|[hashmap left join](./read/hashmap-left-join.md)
+28 |Class34|**Mock Interviews**
+29 |Class35|[Graphs](./read/HashTables.md)
+30 |Class36|[repeated word](./read/hashmap-repeated-word.md)
+
 
 
 
