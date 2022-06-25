@@ -10,6 +10,72 @@ namespace TestProject1
 {
    public class GraphsTest
     {
+
+        //// class36 : graph-breadth-first
+        [Fact]
+        // test breadthfirst graph from one node
+
+        public void Class36_test1()
+        {
+
+            Graphs graphs = new Graphs();
+
+
+            GraphNode node1 = graphs.add("5");
+            GraphNode[] arrNodes = graphs.breadthfirst();
+            Assert.Equal(new GraphNode[] { node1 }, arrNodes);
+
+        }
+        [Fact]
+        // test can be successfully breadthfirst the graph
+
+        public void Class36_test2()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("5");
+            GraphNode node2 = graphs.add("10");
+            GraphNode node3 = graphs.add("15");
+            GraphNode node4 = graphs.add("20");
+            graphs.addEdge(node1, node2, 5);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 8);
+            graphs.addEdge(node1, node2, 5);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 8);
+
+
+            GraphNode[] arrNodes = graphs.breadthfirst();
+            Assert.Equal(new GraphNode[] { node1, node2, node3, node4 }, arrNodes);
+
+
+        }
+
+        [Fact]
+        // test the order of breadthfirst result in the graph
+
+
+        public void Class36_test3()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("5");
+            GraphNode node2 = graphs.add("10");
+            GraphNode node3 = graphs.add("15");
+            GraphNode node4 = graphs.add("20");
+            graphs.addEdge(node1, node3, 5);
+            graphs.addEdge(node3, node2, 3);
+            graphs.addEdge(node2, node4, 4);
+
+
+            GraphNode[] arrNodes = graphs.breadthfirst();
+            Assert.Equal(new GraphNode[] { node1, node3, node2, node4 }, arrNodes);
+
+        }
+
+
         ///Class 35: Graphs
         [Fact]
         // test  Node can be successfully added to the graph

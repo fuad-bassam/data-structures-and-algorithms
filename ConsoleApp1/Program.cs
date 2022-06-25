@@ -619,9 +619,7 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
 
-
-
-            #region class35 :Graphs
+            #region class36 : graph-breadth-first
 
             Graphs graphs = new Graphs();
 
@@ -633,17 +631,46 @@ namespace ConsoleApp1
             graphs.addEdge(node2, node2, 3);
             graphs.addEdge(node1, node3, 4);
             graphs.addEdge(node3, node4, 8);
+            graphs.addEdge(node1, node2, 5);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 8);
 
-            Console.WriteLine("The Graph have {");
+            Console.WriteLine("The Graph node order {");
             int countGraphNode = 0;
 
-            foreach (GraphNode node in graphs.getNodes())
+            foreach (GraphNode node in graphs.breadthfirst())
             {
 
                 Console.WriteLine($"node {++countGraphNode} with value {node.value}");
-                
+
             }
             Console.WriteLine("}");
+
+            #endregion
+            #region class35 :Graphs
+
+            //Graphs graphs = new Graphs();
+
+            //GraphNode node1 = graphs.add("5");
+            //GraphNode node2 = graphs.add("10");
+            //GraphNode node3 = graphs.add("15");
+            //GraphNode node4 = graphs.add("20");
+            //graphs.addEdge(node1, node2, 5);
+            //graphs.addEdge(node2, node2, 3);
+            //graphs.addEdge(node1, node3, 4);
+            //graphs.addEdge(node3, node4, 8);
+
+            //Console.WriteLine("The Graph have {");
+            //int countGraphNode = 0;
+
+            //foreach (GraphNode node in graphs.getNodes())
+            //{
+
+            //    Console.WriteLine($"node {++countGraphNode} with value {node.value}");
+
+            //}
+            //Console.WriteLine("}");
 
             #endregion
 
