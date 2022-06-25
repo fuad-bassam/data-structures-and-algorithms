@@ -8,6 +8,7 @@ namespace CodeChallenge.CodeChallenge.Graphs
 {
   public  class Graphs
     {
+        // class35
         public List<GraphNode> listNodes = new List<GraphNode>();
         public GraphNode add(string value) {
 
@@ -69,5 +70,51 @@ namespace CodeChallenge.CodeChallenge.Graphs
 
             return listNodes.Count;
         }
+
+
+        //class 36
+
+        public GraphNode[] breadthfirst() {
+
+            if (listNodes == null)
+            {
+                return null;
+            }
+            GraphNode[] graphNodes = breadthfirstCall(listNodes[0]).ToArray();
+            return graphNodes;
+        }
+
+
+
+
+        public List<GraphNode> breadthfirstCall(GraphNode vertex) {
+
+
+            List<GraphNode> nodes = new List<GraphNode>();
+            Queue<GraphNode> breadth = new Queue<GraphNode>();
+            List<GraphNode> visited = new List<GraphNode>();
+            breadth.Enqueue(vertex);
+            visited.Add(vertex);
+
+            while (breadth.Count != 0)
+            {
+                GraphNode front = breadth.Dequeue();
+                nodes.Add(front);
+
+                foreach (GraphNodeEdges edges in front.Edges)
+                {
+                    if (!visited.Contains(edges.node2))
+                    {
+                        visited.Add(edges.node2);
+                        breadth.Enqueue(edges.node2);
+                    }
+
+                }
+            }
+
+            return nodes;
+
+        }
+
     }
 }
