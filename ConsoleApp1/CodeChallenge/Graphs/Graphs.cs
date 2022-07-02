@@ -8,8 +8,45 @@ namespace CodeChallenge.CodeChallenge.Graphs
 {
   public  class Graphs
     {
-        // class35
         public List<GraphNode> listNodes = new List<GraphNode>();
+        //class 38: graph-depth-first
+
+
+         List<string> depthFirstRecursion(GraphNode startingNode, List<string> result)
+        {
+
+            if (startingNode == null|| result.Contains(startingNode.value))
+            {
+                return result;
+            }
+            result.Add(startingNode.value);
+            List<GraphNode> nieghborArr = getNeighbors(startingNode);
+            if (nieghborArr == null)
+            {
+                return result;
+            }
+            foreach (GraphNode neighbor in nieghborArr)
+            {
+                result = depthFirstRecursion(neighbor, result);
+            }
+            return result;
+        }
+
+
+        public string[] depthFirst(GraphNode startingNode) {
+            List<string> result = new List<string>();
+            
+            if (!listNodes.Contains(startingNode))
+            {
+                // return null;  //OR 
+                return result.ToArray();
+            }
+            return depthFirstRecursion( startingNode,result).ToArray();
+
+        }
+
+
+        // class35
         public GraphNode add(string value) {
 
             GraphNode newGN = new GraphNode(value);

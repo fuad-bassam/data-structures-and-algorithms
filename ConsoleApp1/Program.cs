@@ -616,7 +616,7 @@ namespace ConsoleApp1
         }
         #endregion
 
-        #region class37 : graph-business-trip
+        #region class37 : graph-business-trip  
         public static decimal? businesstrip(Graphs graph, string[] cityNames)
         {   decimal totalCost = 0, checkTotalCost = 0;
 
@@ -650,25 +650,58 @@ namespace ConsoleApp1
 
         static void Main(string[] args)
         {
-
-            #region class37 : graph-business-trip
-
+            #region class 38: graph-depth-first
             Graphs graphs = new Graphs();
 
             GraphNode node1 = graphs.add("amman");
             GraphNode node2 = graphs.add("zarqa");
             GraphNode node3 = graphs.add("irbed");
             GraphNode node4 = graphs.add("aqaba");
+            GraphNode node5 = new GraphNode("karak");
+
             graphs.addEdge(node1, node2, 10);
-            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node2, node1, 3);
             graphs.addEdge(node1, node3, 4);
             graphs.addEdge(node3, node4, 20);
             graphs.addEdge(node2, node3, 15);
             graphs.addEdge(node1, node3, 4);
 
-            string[] trip = { "amman", "zarqa", "irbed", "aqaba"};
+            string[] trip = { "amman", "zarqa", "irbed", "aqaba" };
 
-            Console.WriteLine("the value = "+businesstrip(graphs,trip));
+            Console.Write("the result=[ "); 
+
+
+            foreach (var item in graphs.depthFirst(node1))
+            {
+                Console.Write("" + item+"  ");
+
+            }
+            Console.Write("]");
+
+
+            #endregion
+
+            #region class37 : graph-business-trip
+
+            //Graphs graphs = new Graphs();
+
+            //GraphNode node1 = graphs.add("amman");
+            //GraphNode node2 = graphs.add("zarqa");
+            //GraphNode node3 = graphs.add("irbed");
+            //GraphNode node4 = graphs.add("aqaba");
+            //GraphNode node5 = graphs.add("amman");
+
+            //graphs.addEdge(node1, node2, 10);
+            //graphs.addEdge(node2, node1, 3);
+            //graphs.addEdge(node1, node3, 4);
+            //graphs.addEdge(node3, node4, 20);
+            //graphs.addEdge(node2, node3, 15);
+            //graphs.addEdge(node1, node3, 4);
+
+            //string[] trip = { "amman", "zarqa", "irbed", "aqaba"};
+
+            // Console.WriteLine("the value = "+businesstrip(graphs,trip));
+
 
 
             #endregion

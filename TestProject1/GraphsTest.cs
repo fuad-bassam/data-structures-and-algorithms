@@ -10,7 +10,92 @@ namespace TestProject1
 {
    public class GraphsTest
     {
+        ////class 38: graph-depth-first
 
+        [Fact]
+        // test resut 1
+
+        public void Class38_test1()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            GraphNode node5 = new GraphNode("amman");
+
+            graphs.addEdge(node1, node2, 10);
+            graphs.addEdge(node2, node1, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 20);
+            graphs.addEdge(node2, node3, 15);
+            graphs.addEdge(node1, node3, 4);
+
+            string[] trip = { "amman", "zarqa", "irbed", "aqaba" };
+
+
+            
+
+
+            Assert.Equal(trip, graphs.depthFirst(node1));
+
+
+        }
+        [Fact]
+        // test resut 2
+
+        public void Class38_test2()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            GraphNode node5 = new GraphNode("amman");
+
+            graphs.addEdge(node1, node2, 10);
+            graphs.addEdge(node2, node1, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 20);
+            graphs.addEdge(node2, node3, 15);
+            graphs.addEdge(node1, node3, 4);
+
+            string[] trip = {  "zarqa", "amman", "irbed", "aqaba" };
+
+
+            Assert.Equal(trip, graphs.depthFirst(node2));
+
+        }
+        [Fact]
+        // test node not conectead with other or not in the graph
+
+        public void Class38_test3()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            GraphNode node5 = new GraphNode("larak");
+
+            graphs.addEdge(node1, node2, 10);
+            graphs.addEdge(node2, node1, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 20);
+            graphs.addEdge(node2, node3, 15);
+            graphs.addEdge(node1, node3, 4);
+
+            string[] trip = { };
+
+
+            Assert.Equal(trip, graphs.depthFirst(node5));
+
+        }
+
+       
 
 
         // class37 : graph-business-trip
