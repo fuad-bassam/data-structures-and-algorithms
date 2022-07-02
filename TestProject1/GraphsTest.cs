@@ -11,6 +11,85 @@ namespace TestProject1
    public class GraphsTest
     {
 
+
+
+        // class37 : graph-business-trip
+        [Fact]
+        // test resut 1
+
+        public void Class37_test1()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            graphs.addEdge(node1, node2, 10);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 20);
+            graphs.addEdge(node2, node3, 15);
+            graphs.addEdge(node1, node3, 4);
+
+            string[] trip = { "amman", "zarqa", "irbed", "aqaba" };
+
+            Assert.Equal(45, Program. businesstrip(graphs, trip));
+
+
+        }
+        [Fact]
+        // test resut 2
+
+        public void Class37_test2()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node2, node4, 100);
+            graphs.addEdge(node4, node3, 150);
+            graphs.addEdge(node1, node2, 4);
+
+            string[] trip = { "amman", "zarqa", "aqaba" , "irbed" };
+
+            Assert.Equal(254, Program.businesstrip(graphs, trip));
+
+
+        }
+        [Fact]
+        // test if there is no way between to city
+
+        public void Class37_test3()
+        {
+            Graphs graphs = new Graphs();
+
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            graphs.addEdge(node1, node2, 10);
+            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node1, node3, 4);
+            graphs.addEdge(node3, node4, 20);
+            graphs.addEdge(node2, node3, 15);
+            graphs.addEdge(node1, node3, 4);
+
+            string[] trip = { "amman", "aqaba", "zarqa", "irbed"  };
+
+            Assert.Null( Program.businesstrip(graphs, trip));
+
+
+        }
+       
+
+
+
         //// class36 : graph-breadth-first
         [Fact]
         // test breadthfirst graph from one node
@@ -45,7 +124,6 @@ namespace TestProject1
             graphs.addEdge(node2, node2, 3);
             graphs.addEdge(node1, node3, 4);
             graphs.addEdge(node3, node4, 8);
-
 
             GraphNode[] arrNodes = graphs.breadthfirst();
             Assert.Equal(new GraphNode[] { node1, node2, node3, node4 }, arrNodes);
