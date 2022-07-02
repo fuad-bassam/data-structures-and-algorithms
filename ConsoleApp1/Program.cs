@@ -204,8 +204,8 @@ namespace ConsoleApp1
         #region call-linked-list-zip
 
         //call-Challenge8-linked-list-zip 
-         
-         
+
+
         public static LinkedList zipList(LinkedList list1, LinkedList list2)
         {
             LinkedList list3 = list1.deepcopy();
@@ -506,7 +506,7 @@ namespace ConsoleApp1
             //    this.table2Data = table2Data;
             //}
         }
-        public static List<HashJoinTable> addhashTableData(HashTable table , HashTable table2)
+        public static List<HashJoinTable> addhashTableData(HashTable table, HashTable table2)
         {
             List<HashJoinTable> newTable = new List<HashJoinTable>();
 
@@ -530,13 +530,13 @@ namespace ConsoleApp1
 
         }
 
-        public static List<HashJoinTable> hashmapLeftJoin(HashTable table1 , HashTable table2)
+        public static List<HashJoinTable> hashmapLeftJoin(HashTable table1, HashTable table2)
         {
 
             List<HashJoinTable> newHashJoinTable = new List<HashJoinTable>();
 
 
-            newHashJoinTable.AddRange( addhashTableData(table1, table2));
+            newHashJoinTable.AddRange(addhashTableData(table1, table2));
 
             newHashJoinTable.AddRange(addhashTableData(table2, table1));
 
@@ -583,7 +583,7 @@ namespace ConsoleApp1
 
 
 
-        public static List<int> tree_intersection(BinaryTree tree1 , BinaryTree tree2) {
+        public static List<int> tree_intersection(BinaryTree tree1, BinaryTree tree2) {
 
             if (tree1 == null || tree2 == null || tree1.root == null || tree2.root == null)
             {
@@ -593,22 +593,22 @@ namespace ConsoleApp1
             HashTable hashTable1 = new HashTable();
             List<int> listData = new List<int>();
 
-              Array treeArray1 = tree1.preOrder();
+            Array treeArray1 = tree1.preOrder();
 
             foreach (int item in treeArray1)
             {
-                hashTable1.set(item.ToString(),item);
+                hashTable1.set(item.ToString(), item);
             }
 
             Array treeArray2 = tree2.preOrder();
 
             foreach (int item in treeArray2)
             {
-                if (hashTable1.get(item.ToString()) !=null)
+                if (hashTable1.get(item.ToString()) != null)
                 {
                     listData.Add(item);
                 }
-                
+
             }
 
 
@@ -616,36 +616,91 @@ namespace ConsoleApp1
         }
         #endregion
 
+        #region class37 : graph-business-trip
+        public static decimal? businesstrip(Graphs graph, string[] cityNames)
+        {   decimal totalCost = 0, checkTotalCost = 0;
+
+            for (int cityIndex = 0; cityIndex < cityNames.Length; cityIndex++)
+            {
+                GraphNode cityNode = graph.getNodes().FirstOrDefault(x => x.value == cityNames[cityIndex]);
+                if (cityNode == null)
+                { return null; }
+                checkTotalCost = totalCost;
+
+                foreach (GraphNodeEdges edge in cityNode.Edges)
+                {
+                    if (cityIndex+1 >= cityNames.Length)
+                    {
+                        continue;
+                    }else if ( edge.node2.value == cityNames[cityIndex + 1])
+                    {
+                        totalCost += edge.edgeWeight;
+                        break;
+                    }
+                }
+
+
+                if (checkTotalCost == totalCost && cityIndex + 1 < cityNames.Length)
+                { return null; }
+            }
+                return totalCost;
+            
+        }
+            #endregion
+
         static void Main(string[] args)
         {
 
-            #region class36 : graph-breadth-first
+            #region class37 : graph-business-trip
 
             Graphs graphs = new Graphs();
 
-            GraphNode node1 = graphs.add("5");
-            GraphNode node2 = graphs.add("10");
-            GraphNode node3 = graphs.add("15");
-            GraphNode node4 = graphs.add("20");
-            graphs.addEdge(node1, node2, 5);
+            GraphNode node1 = graphs.add("amman");
+            GraphNode node2 = graphs.add("zarqa");
+            GraphNode node3 = graphs.add("irbed");
+            GraphNode node4 = graphs.add("aqaba");
+            graphs.addEdge(node1, node2, 10);
             graphs.addEdge(node2, node2, 3);
             graphs.addEdge(node1, node3, 4);
-            graphs.addEdge(node3, node4, 8);
-            graphs.addEdge(node1, node2, 5);
-            graphs.addEdge(node2, node2, 3);
+            graphs.addEdge(node3, node4, 20);
+            graphs.addEdge(node2, node3, 15);
             graphs.addEdge(node1, node3, 4);
-            graphs.addEdge(node3, node4, 8);
 
-            Console.WriteLine("The Graph node order {");
-            int countGraphNode = 0;
+            string[] trip = { "amman", "zarqa", "irbed", "aqaba"};
 
-            foreach (GraphNode node in graphs.breadthfirst())
-            {
+            Console.WriteLine("the value = "+businesstrip(graphs,trip));
 
-                Console.WriteLine($"node {++countGraphNode} with value {node.value}");
 
-            }
-            Console.WriteLine("}");
+            #endregion
+
+
+            #region class36 : graph-breadth-first
+
+            //Graphs graphs = new Graphs();
+
+            //GraphNode node1 = graphs.add("5");
+            //GraphNode node2 = graphs.add("10");
+            //GraphNode node3 = graphs.add("15");
+            //GraphNode node4 = graphs.add("20");
+            //graphs.addEdge(node1, node2, 5);
+            //graphs.addEdge(node2, node2, 3);
+            //graphs.addEdge(node1, node3, 4);
+            //graphs.addEdge(node3, node4, 8);
+            //graphs.addEdge(node1, node2, 5);
+            //graphs.addEdge(node2, node2, 3);
+            //graphs.addEdge(node1, node3, 4);
+            //graphs.addEdge(node3, node4, 8);
+
+            //Console.WriteLine("The Graph node order {");
+            //int countGraphNode = 0;
+
+            //foreach (GraphNode node in graphs.breadthfirst())
+            //{
+
+            //    Console.WriteLine($"node {++countGraphNode} with value {node.value}");
+
+            //}
+            //Console.WriteLine("}");
 
             #endregion
             #region class35 :Graphs
