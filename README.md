@@ -35,8 +35,9 @@ in this project you will find some algorithims and codes for many Topics i hope 
 28 |Class34|**Mock Interviews**
 29 |Class35|[Graphs](./read/HashTables.md)
 30 |Class36|[repeated word](./read/hashmap-repeated-word.md)
-
-
+31 |Class36|[graph-breadth-first](./read/Graphs/graph-breadth-first.md)
+32 |Class37|[graph-business-trip](./read/Graphs/graph-business-trip.md)
+33 |Class38|[graph-depth-first](./read/Graphs/graph-depth-first.md)
 
 
 

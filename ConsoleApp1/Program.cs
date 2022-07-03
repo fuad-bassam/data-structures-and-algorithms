@@ -646,18 +646,65 @@ namespace ConsoleApp1
                 return totalCost;
             
         }
-            #endregion
+        #endregion
+
+       #region class 39:Mock Interviews
+
+        public static bool isConnect(Graphs graph ,GraphNode node1 ,GraphNode node2) 
+        {
+            Queue<GraphNode> queue = new Queue<GraphNode>();
+            List<GraphNode> usedBefore = new List<GraphNode>();
+            GraphNode selectedNode = new GraphNode("");
+
+            selectedNode = node1;
+            if (graph.getNodes().Count== 0)
+            {
+                return false
+;
+            }
+            if (node1 == node2)
+            {
+
+                return true;
+            }
+
+            queue.Enqueue(selectedNode);
+            while (queue.Count != 0)
+            {
+                selectedNode = queue.Dequeue();
+
+                if (usedBefore.Contains(selectedNode))
+                {
+                    continue;
+
+                }
+                if (selectedNode == node2)
+                {
+                return true;
+
+                }
+                usedBefore.Add(selectedNode);
+                foreach (GraphNode neighbor in graph.getNeighbors(selectedNode))
+                {
+                    queue.Enqueue(neighbor);
+                }              
+                  }
+            return false;
+}
+
+#endregion
 
         static void Main(string[] args)
         {
-            #region class 38: graph-depth-first
+            #region class 39:Mock Interviews
+
+
             Graphs graphs = new Graphs();
 
             GraphNode node1 = graphs.add("amman");
             GraphNode node2 = graphs.add("zarqa");
             GraphNode node3 = graphs.add("irbed");
             GraphNode node4 = graphs.add("aqaba");
-            GraphNode node5 = new GraphNode("karak");
 
             graphs.addEdge(node1, node2, 10);
             graphs.addEdge(node2, node1, 3);
@@ -666,17 +713,43 @@ namespace ConsoleApp1
             graphs.addEdge(node2, node3, 15);
             graphs.addEdge(node1, node3, 4);
 
-            string[] trip = { "amman", "zarqa", "irbed", "aqaba" };
-
-            Console.Write("the result=[ "); 
 
 
-            foreach (var item in graphs.depthFirst(node1))
+            if (isConnect(graphs,node4,node1))
             {
-                Console.Write("" + item+"  ");
+                Console.Write("]");
 
             }
-            Console.Write("]");
+
+
+            #endregion
+            #region class 38: graph-depth-first
+            //Graphs graphs = new Graphs();
+
+            //GraphNode node1 = graphs.add("amman");
+            //GraphNode node2 = graphs.add("zarqa");
+            //GraphNode node3 = graphs.add("irbed");
+            //GraphNode node4 = graphs.add("aqaba");
+            //GraphNode node5 = new GraphNode("karak");
+
+            //graphs.addEdge(node1, node2, 10);
+            //graphs.addEdge(node2, node1, 3);
+            //graphs.addEdge(node1, node3, 4);
+            //graphs.addEdge(node3, node4, 20);
+            //graphs.addEdge(node2, node3, 15);
+            //graphs.addEdge(node1, node3, 4);
+
+            //string[] trip = { "amman", "zarqa", "irbed", "aqaba" };
+
+            //Console.Write("the result=[ "); 
+
+
+            //foreach (var item in graphs.depthFirst(node1))
+            //{
+            //    Console.Write("" + item+"  ");
+
+            //}
+            //Console.Write("]");
 
 
             #endregion
